@@ -20,6 +20,8 @@ rails db:migrate
 # destroy database while update database before
 rails db:rollback
 
+rails db:seed
+
 # use table
 rails console
 
@@ -48,3 +50,7 @@ format: { with: VALID_EMAIL_REGEX },
 
 ##### error
 khong hien loi dang nhap
+
+<%= will_paginate @user %> khong hoat dong
+
+khong xac nhan xoa tk

@@ -2,10 +2,10 @@
 
 <div class="row">
   <div class="col-3"></div>
-  <div class="col-6 form-login row">
-    <div class="welcome col-6">Welcome</div>
+  <div class="col-6 row box-user">
+    <div class="col-6">Welcome</div>
 
-    <div class="col-6 login">
+    <div class="col-6">
       <h1>Dang nhap</h1>
       <%= form_with(url: login_path, scope: :session, local: true) do |form| %>
           <ul>
@@ -13,9 +13,9 @@
         
             <li> Mat khau <%= form.text_field :password %> </li>
           </ul>
-          <p class="bt-DangNhap"> <%= form.submit "Dang nhap"%> </p>
+          <p class=""> <%= form.submit "Dang nhap"%> </p>
           <hr class="hr">
-          <p class="bt-TaoTaiKhoan"> <%= link_to "Tao tai khoan", signup_path %> </p>
+          <p class=""> <%= link_to "Tao tai khoan", signup_path %> </p>
       <% end %>
     </div>
   </div>

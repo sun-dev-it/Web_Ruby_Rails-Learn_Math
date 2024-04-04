@@ -3,8 +3,8 @@
 
 <div class="row">
   <div class="col-1"><%= avatar @user %></div>
-  <div class="col-5 signup">
-    <div class="form-signup">
+  <div class="col-5">
+    <div class="">
       <h1>Editing user</h1>
       <%= form_with(model: @user, local: true) do |form| %>
         <%= render 'shared/error_messages' %>

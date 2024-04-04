@@ -1,154 +1,16 @@
 .header {
     background: #333333;
     height: 72px;
-    a {
-        color: rgb(255, 255, 255);
-    }
-
-    .logo{
-        color: #ffffff;
-    }
-
-    .menu {
-        .menu-profile{
-            z-index: 1;
-            padding: 8px;
-            border: 2px solid #3d3d3d;
-            border-radius: 10px;
-            background: #333333;
-            margin-top: 6px;
-            ul {
-                width: 100px;
-                padding: 0;
-                li {
-                    padding: 7px;
-                    border-radius: 6px;
-                }
-
-                li:hover {
-                    background: #494949;
-                }
-            }
-        }
-    }
-
-    .login-name {
-        margin-top: 6px;
-        padding: 18px 15px;
-    }
-    .login-name:hover {
-        background: #494949;
-        height: 60px;
-        border-radius: 10px;
-    }
-
-    .main-menu{
-        div{
-            text-align: center;
-            padding: 5px;
-            a {
-                padding-top: 18px;
-                height: 60px;
-                border-radius: 10px;
-            }
-            a:hover{
-                background: #494949;
-            }
-        }
-    }
 }
 
 body {
-    .avatar {
-        width: 80px;
-    }
-
-    .welcome {
-        font-size: 30px;
-        text-align: center;
-    }
-
-    .form-login{
-        min-height: 450px;
-        padding: 0;
-        margin-top: 70px;
-        border: 0 solid;
-        border-radius: 10px;
-        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.4);
-
-        h1 {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .signup {
-            padding: 60px 30px 20px;
-            color: #ffffff;
-            background: #3a3a3a;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            ul {
-                li {
-                    height: 40px;
-                    padding-right: 20px;
-                    input {
-                        float: right;
-                        width: 60%;
-                    }
-                }
-            }
-            
-            .bt-DangNhap{
-                text-align: center;
-            }
-
-            .bt-TaoTaiKhoan {
-                text-align: center;
-
-                a{
-                    color: #ffffff;
-                }
-            }
-        }
-
-        .login {
-            padding: 60px 30px 20px;
-            color: #ffffff;
-            background: #3a3a3a;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-            
-
-            ul {
-                li {
-                    height: 40px;
-                    padding-right: 20px;
-                    input {
-                        float: right;
-                        width: 60%;
-                    }
-                }
-            }
-            
-            .bt-DangNhap{
-                text-align: center;
-            }
-
-            .bt-TaoTaiKhoan {
-                text-align: center;
-
-                a{
-                    color: #ffffff;
-                }
-            }
-        }
-        .welcome {
-            background: #ffffff;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-        }
-    }
-
+   background: #d8d8d8;
+   .box-user {
+    border: 1px solid black;
+   }
+   .avatar {
+    width: 100px;
+   }
 }
 
 .footer {

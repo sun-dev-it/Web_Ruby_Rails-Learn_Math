@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_01_074827) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_25_152634) do
   create_table "feedbacks", force: :cascade do |t|
     t.integer "grade"
     t.text "content"
@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_01_074827) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.string "string"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

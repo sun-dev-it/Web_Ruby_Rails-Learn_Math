@@ -1,8 +1,9 @@
 <% provide(:title, "Dang ki") %>
+
 <div class="row">
   <div class="col-3"></div>
-  <div class="col-6 form-login row">
-    <div class="col-6 signup">
+  <div class="col-6 row box-user">
+    <div class="col-6">
       <h1>Tao tai khoan</h1>
       <%= form_with(model: @user, local: true) do |form| %>
         <%= render 'shared/error_messages' %>
@@ -15,14 +16,14 @@
 
           <li> Nhap lai mat khau<%= form.text_field :password_confirmation %> </li>
           
-          <p class="bt-DangNhap"> <%= form.submit "Tao tai khoan" %> </p>
+          <p class=""> <%= form.submit "Tao tai khoan" %> </p>
           <hr class="hr">
-          <p class="bt-TaoTaiKhoan"> <%= link_to "dang nhap", login_path %> </p>
+          <p class=""> <%= link_to "dang nhap", login_path %> </p>
         </ul>
       <% end %>
     </div>
-    <div class="col-6 welcome">Welcome</div>
-  <div>
+    <div class="col-6">Welcome</div>
+  </div>
 
   <div class="col-3"></div>
 </div>
