@@ -1,13 +1,20 @@
-<%= will_paginate @users %>
-<h1>Users</h1>
-<p> <%= link_to "Home", root_path %> </p>
+<div class="row">
+  <div class="col-2"><h1>Users</h1></div>
+  <div class="col-8">
+    <div id="users" class="row">
+      <h3 class="col-3"> Ten </h3>
+      <h3 class="col-6"> email </h3>
+      <h3 class="col-3"> link </h3>
 
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-      <%= link_to "Show this user", user %>
-  <% end %>
+      <% @users.each do |user| %>
+        <div class="col-3"> <%= user.name %> </div>
+        <div class="col-6"> <%= user.email %> </div>
+        <div class="col-3"><%= link_to "Show this user", user %></div>
+      <% end %>
+    </div>
+
+    <%= link_to "New user", new_user_path %>
+  </div>
+
+  <div class="col-2"></div>
 </div>
-
-<%= link_to "New user", new_user_path %>
-<%= will_paginate @users %>

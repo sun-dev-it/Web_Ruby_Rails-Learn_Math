@@ -4,10 +4,11 @@ class UsersController < ApplicationController
   before_action :admin_user,      only: :destroy
   def index
     @users = User.paginate(page: params[:page])
-  end
+  end  
 
   def show
     @user = User.find(params[:id])
+    @snapshots = @user.snapshots.paginate(page: params[:page])
   end
 
   def signup
@@ -51,13 +52,6 @@ class UsersController < ApplicationController
   end
 
   private
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Vui long dang nhap"
-        redirect_to login_url
-      end
-    end
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)

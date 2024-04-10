@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_25_152634) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_04_135054) do
   create_table "feedbacks", force: :cascade do |t|
     t.integer "grade"
     t.text "content"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "snapshots", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index "\"user_id\", \"create_at\"", name: "index_snapshots_on_user_id_and_create_at"
+    t.index ["user_id"], name: "index_snapshots_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -29,4 +38,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_25_152634) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "snapshots", "users"
 end

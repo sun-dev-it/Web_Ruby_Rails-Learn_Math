@@ -1,15 +1,26 @@
 <div class="row">
-<div class="col-2"></div>
-  <div class="col-5">
-    <%= avatar @user%>
+  <div class="col-1"></div>
+  <div class="col-4">
+    <%= avatar @user %>
     <p> Ten <%= @user.name %> </p>
     <p> Email <%= @user.email %> </p>
     <%= button_to "Destroy this user", @user, method: :delete, data: { confirm: "chac chan xoa?" } %>
   </div>
-  <div class="col-4">Gioi thieu
-  <% if current_user.admin? %>
-    <%= link_to "Users", users_path %>   
-  <% end %>
+  <div class="col-5">Gioi thieu
+
+    <% if @user.snapshots.any? %>
+      <h3> Bài viết <%= @user.snapshots.count %></h3>
+      <ol class="snapshots">
+        <%= render @snapshots %>
+      </ol>
+      <%= will_paginate @snapshots %>
+    <% end %>
+    <div>
+      <% if current_user.admin? %>
+        <%= link_to "Users", users_path %>   
+      <% end %>
+    </div>
+
   </div>
   <div class="col-1"></div>
 </div>

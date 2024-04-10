@@ -1,0 +1,7 @@
+<%= form_with(model: @snapshot, local: true) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div>
+        <%= f.text_area :content, placeholder: " Create a new snapshot ..." %>
+    </div>
+    <%= f.submit "Post", class: "" %>
+<% end %>
