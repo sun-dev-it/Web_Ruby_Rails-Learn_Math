@@ -6,6 +6,8 @@
     <p> Email <%= @user.email %> </p>
     <%= button_to "Destroy this user", @user, method: :delete, data: { confirm: "chac chan xoa?" } %>
   </div>
+
+  
   <div class="col-5">Gioi thieu
 
     <% if @user.snapshots.any? %>

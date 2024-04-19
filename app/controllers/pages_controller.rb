@@ -6,6 +6,7 @@ class PagesController < ApplicationController
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
   end
+  
   def help
     @user = User.find_by(params[:id])
   end

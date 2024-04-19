@@ -54,3 +54,11 @@ khong hien loi dang nhap
 <%= will_paginate @user %> khong hoat dong
 
 khong xac nhan xoa tk
+
+
+# _snapshot.html, snapshot.rb
+<%= image_tag snapshot.display_image if snapshot.image.attached? %>
+
+def display_image
+    image.variant(resize_to_limit: [500, 500])
+end

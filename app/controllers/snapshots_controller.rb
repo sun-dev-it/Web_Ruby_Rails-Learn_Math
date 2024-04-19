@@ -2,8 +2,9 @@ class SnapshotsController < ApplicationController
     before_action :logged_in_user, only: [:create, :destroy]
     before_action :correct_user, only: :destroy
     def create
-        @snapshots = current_user.snapshots.build(snapshot_params)
-        if @snapshots.save
+        @snapshot = current_user.snapshots.build(snapshot_params)
+        @snapshot.image.attach(params[:snapshot][:image])
+        if @snapshot.save
             flash[:success] = "snapshot da tao"
             redirect_to root_url
         else
@@ -21,7 +22,7 @@ class SnapshotsController < ApplicationController
     private
 
     def snapshot_params
-        params.require(:snapshot).permit(:content)
+        params.require(:snapshot).permit(:content, :image)
     end
 
     def correct_user
