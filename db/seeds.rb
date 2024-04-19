@@ -17,3 +17,11 @@ users = User.order(:created_ad).take(5)
     users.each { |user| user.snapshots.create!(content: content) }
     i += 1
 end
+
+users = User.all
+admin = User.find_by(email: "admin@gmail.com")
+users.each do |user|
+    next if user == admin
+
+    user.follow(admin)
+end

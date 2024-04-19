@@ -1,0 +1,23 @@
+<% provide(:title, "follow") %>
+<div class="row">
+    <aside class="col-4">
+        <section class="user_info">
+            <%= avatar @user %>
+            <h1><%= @user.name %></h1>
+            <span><%= link_to "view my profile", @user %></span>
+            <span><b>Snapshots:</b> <%= @user.snapshots.count %></span>
+        </section>
+        <section class="stats">
+            <%= render 'shared/stats' %>
+        </section>
+    </aside>
+    <div class="col-8">
+        <h3><%= @title %></h3>
+        <% if @users.any? %>
+            <ul class="users fol1ow">
+                <%= render @users %>
+            </ul>
+            <%= will_paginate %>
+        <% end %>
+    </div>
+</div>
