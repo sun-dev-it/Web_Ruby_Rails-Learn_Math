@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :users
   root 'pages#home'
   get '/help', to: 'pages#help'
   get '/congthuc', to: 'pages#CongThuc'
@@ -11,5 +10,12 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/logout', to: 'sessions#destroy'
   
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :feedbacks
+  resources :snapshots, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end

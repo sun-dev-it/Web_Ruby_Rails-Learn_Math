@@ -1,0 +1,22 @@
+<%= form_with(model: @snapshot, local: true) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div>
+        <%= f.text_area :content, placeholder: " Create a new snapshot ..." %>
+    </div>
+    <%= f.submit "Post", class: "" %>
+
+    <span class="image"> 
+        <%= f.file_field :image, accept: "image/jpeg, image/gif, image/png" %>
+    </span>
+
+<% end %>
+
+<script type="text/javascript">
+    $("#snapshot_image").bind("change", function(){
+        var size_in_megabytes = this.file[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+            alert("image cannot exceed 5MB, nho hon");
+        }
+        $("#snapshot_image").val("");
+    });
+</script>

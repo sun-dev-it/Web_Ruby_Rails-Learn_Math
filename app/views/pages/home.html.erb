@@ -1,13 +1,32 @@
 <% provide(:title, "Trang chu") %>
 
+<% if logged_in? %>
 <div class="row">
-    <div class="col-4">
-        thanh cong cu
-    </div>
-    <div class="col-5">
-        ve
-    </div>
-    <div class="col-3">
-        chi tiet
+    <div class="col-1"></div>
+    <aside class="col-4">
+        <section class="">
+            <%= render 'shared/user_info' %>
+        </section>
+        
+        <section>
+            <%= render 'shared/stats' %>
+        </section>
+
+        <section>
+            <%= render 'shared/snapshot_form' %>
+        </section>
+    </aside>
+
+    <div class="col-7">
+        <h3> Snapshot feed</h3>
+        <%= render 'shared/feed' %>
     </div>
 </div>
+
+<% else %>
+
+    <div>
+        <h1> Vui long dang nhap</h1>
+    </div>
+
+<% end %>
