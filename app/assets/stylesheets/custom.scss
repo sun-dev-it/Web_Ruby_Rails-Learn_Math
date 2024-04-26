@@ -4,14 +4,60 @@
 }
 
 body {
-   background: #d8d8d8;
+   background: rgb(246, 250, 255);
    .box-user {
     border: 1px solid black;
    }
    .avatar {
     width: 100px;
    }
+   .avt_pf {
+    width: 20px;
+   }
+   .info_user {
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+
+        .name_user {
+        text-align: center;
+       }
+       .detail {
+        padding: 5px;
+       }
+   }
+   .snapshot_form {
+        padding: 8px;
+        border: 1px solid black;
+        border-radius: 5px;
+   }
+   .snapshot_profile {
+        padding: 8px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+
+    .list_follow {
+        padding: 8px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+
+    .save {
+        width: auto;
+    }
+
+    .list_ct{
+        width: auto;
+    }
+
+    .my_container {
+        padding: 8px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
 }
+
 
 .footer {
     color: red;

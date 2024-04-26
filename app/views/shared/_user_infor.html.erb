@@ -1,0 +1,17 @@
+<div class="info_user">
+    <div class="name_user">
+    <%= avatar @user %>
+    <p> <%= @user.name %> </p>
+    <%= render 'shared/follow_form' if logged_in? %>
+    <%= render'shared/stats' %>
+    </div>
+
+    <div class="detail">
+    <p> So bai viet <%= @user.snapshots.count %></p>
+    <p> Email <%= @user.email %> </p>
+    <% if current_user.admin? %>
+        <%= link_to "Users", users_path %>
+        <%= button_to "Destroy this user", @user, method: :delete, data: { confirm: "chac chan xoa?" } %>
+    <% end %>
+    </div>
+</div>

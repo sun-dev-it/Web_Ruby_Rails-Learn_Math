@@ -1,3 +1,35 @@
-<% provide(:title, "Help") %>
+<% provide(:title, "Hoi-dap") %>
 
-help
+<% if logged_in? %>
+<div class="row">
+    <div class="col-4">
+        <p>Bai viet</p>
+    </div>
+
+    <div class="col-4">
+        <div class="snapshot_form">
+            <%= render 'shared/snapshot_form' %>
+        </div>
+        <br>
+        <div>
+            <%= render 'shared/feed' %>
+        </div>
+    </div>
+
+
+    <div class="col-4"></div>
+</div>
+
+
+
+
+
+
+
+<% else %>
+
+    <div>
+        <h1> Vui long dang nhap</h1>
+    </div>
+
+<% end %>

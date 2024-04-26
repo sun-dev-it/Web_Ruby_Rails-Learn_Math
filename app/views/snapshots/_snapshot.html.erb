@@ -1,16 +1,16 @@
-<li id="snapshot-<%= snapshot.id %>">
-    <span class="user">
-        <%= link_to avatar(snapshot.user, size: 50), snapshot.user %>
-    </span>
-    <span class="content"><%= snapshot.content %></span>
+<div id="snapshot-<%= snapshot.id %>" class="snapshot_profile">
+    <%= link_to snapshot.user, class: "avt_pf" do %>
+        <%= avatar(snapshot.user, size: 10) %>
+    <% end %>
+    <%= @user.name %>
+    <small> Đăng lúc: <%= time_ago_in_words(snapshot.created_at) %> </small>
 
-    <%= image_tag snapshot.image if snapshot.image.attached? %>
-    
-    <span class="timestamp" style="font-size: 12px">
-        Đăng lúc: <%= time_ago_in_words(snapshot.created_at) %> 
+    <p class="content"><%= snapshot.content %></p>
+    <div> <%= image_tag snapshot.image if snapshot.image.attached? %> </div>
+    <div>
         <% if current_user?(snapshot.user) %>
             <%= button_to "delete", snapshot, method: :delete, data: { confirm: "xoa" } %>
         <% end %>
-    </span> 
-    <hr>
-</li>
+    </div>
+</div>
+<br>
