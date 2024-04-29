@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-3"></div>
-  <div class="col-6 row box-user">
+  <div class="col-6 row my_container">
     <div class="col-6">
       <h1>Tao tai khoan</h1>
       <%= form_with(model: @user, local: true) do |f| %>
@@ -15,6 +15,8 @@
           <li> Mat khau<%= f.text_field :password %> </li>
 
           <li> Nhap lai mat khau<%= f.text_field :password_confirmation %> </li>
+          
+          <li> anh dai dien <%= f.file_field :avatar %> </li>
           
           <p class=""> <%= f.submit "Tao tai khoan" %> </p>
           <hr class="hr">

@@ -10,9 +10,7 @@ rails server
 rails generate scaffold User name:string email:string
 
 # create controller
-rails generate controller Pages home
-
-rails generate controller sessions new
+rails generate controller friends home
 
 # update database
 rails db:migrate

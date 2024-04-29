@@ -3,7 +3,7 @@ User.delete_all
 User.create!(name: "admin", email: "admin@gmail.com", password: "090502", password_confirmation: "090502", admin: true)
 
 i = 1
-30.times do
+5.times do
     name = "User#{i}"
     email = "user#{i}@gmail.com"
     User.create(name: name, email: email, password: "123456", password_confirmation: "123456")
@@ -22,6 +22,5 @@ users = User.all
 admin = User.find_by(email: "admin@gmail.com")
 users.each do |user|
     next if user == admin
-
     user.follow(admin)
 end

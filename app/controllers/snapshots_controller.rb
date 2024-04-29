@@ -5,8 +5,8 @@ class SnapshotsController < ApplicationController
         @snapshot = current_user.snapshots.build(snapshot_params)
         @snapshot.image.attach(params[:snapshot][:image])
         if @snapshot.save
-            flash[:success] = "snapshot da tao"
-            redirect_to root_url
+            flash[:success] = "Đã đăng"
+            redirect_back(fallback_location: root_url)
         else
             @feed_items = current_user.feed.paginate(page: params[:page])
             render 'pages/home'
@@ -16,7 +16,7 @@ class SnapshotsController < ApplicationController
     def destroy
         @snapshot.destroy
         flash[:success] = "Da xoa snap"
-        redirect_to request.referrer || root_url
+        redirect_back(fallback_location: root_url)
     end
 
     private
@@ -26,8 +26,12 @@ class SnapshotsController < ApplicationController
     end
 
     def correct_user
-        @snapshot = current_user.snapshots.find_by(id: params[:id])
-        redirect_to root_url if @snapshot.nil?
+        if current_user.admin?
+            @snapshot = Snapshot.find_by(id: params[:id])
+        else
+            @snapshot = current_user.snapshots.find_by(id: params[:id])
+            redirect_to root_url if @snapshot.nil?
+        end
     end
 
 end

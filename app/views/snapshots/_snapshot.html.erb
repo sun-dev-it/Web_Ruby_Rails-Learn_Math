@@ -1,16 +1,31 @@
-<div id="snapshot-<%= snapshot.id %>" class="snapshot_profile">
-    <%= link_to snapshot.user, class: "avt_pf" do %>
-        <%= avatar(snapshot.user, size: 10) %>
-    <% end %>
-    <%= @user.name %>
-    <small> Đăng lúc: <%= time_ago_in_words(snapshot.created_at) %> </small>
-
-    <p class="content"><%= snapshot.content %></p>
-    <div> <%= image_tag snapshot.image if snapshot.image.attached? %> </div>
-    <div>
-        <% if current_user?(snapshot.user) %>
-            <%= button_to "delete", snapshot, method: :delete, data: { confirm: "xoa" } %>
-        <% end %>
+<div id="snapshot-<%= snapshot.id %>" class="my_container">
+    <div class="row">
+        <div class="col-2">
+            <%= link_to snapshot.user do %>
+                <div class="avatar_wrapper">
+                    <%= image_tag @user.avatar if @user.avatar.attached? %>
+                </div>
+            <% end %>
+        </div>
+        <div class="col-10">
+            <%= @user.name %>
+        </div>
+        <div class="col-12">
+            <small> <%= time_ago_in_words(snapshot.created_at) %> </small>
+        </div>
+        <div class="col-12 snapshot_padding">
+            <p class="content_snapshot"><%= snapshot.content %></p>
+            <div class = "img_snapshot"> 
+                <%= image_tag snapshot.image if snapshot.image.attached? %> 
+                <i class="fa-regular fa-heart"></i>
+            </div>
+        </div>
+        <div class="col-10"></div>
+        <div class="col-2">
+            <% if current_user?(snapshot.user) or current_user.admin? %>
+                <%= button_to "delete", snapshot, method: :delete, data: { confirm: "xoa" } %>
+            <% end %>
+        </div>
     </div>
 </div>
 <br>

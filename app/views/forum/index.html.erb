@@ -2,15 +2,22 @@
 
 <% if logged_in? %>
 <div class="row">
-    <div class="col-4">
-        <p>Bai viet</p>
+    <div class="col-1"></div>
+    <div class="col-11">Thanh tim kiem</div>
+    <div class="col-1"></div>
+    <div class="col-3">
+        <div class="container_list">
+            <p>Bài viết</p>
+        </div>
     </div>
 
     <div class="col-4">
-        <div class="snapshot_form">
+        <div class="my_container">
             <%= render 'shared/snapshot_form' %>
         </div>
+        
         <br>
+
         <div>
             <%= render 'shared/feed' %>
         </div>
@@ -19,7 +26,6 @@
 
     <div class="col-4"></div>
 </div>
-
 
 
 

@@ -1,6 +1,7 @@
 <% provide(:title, "follow") %>
 <div class="row">
-    <div class="col-3">
+    <div class="col-1"></div>
+    <div class="col-2">
       <%= render 'shared/user_infor' %>
     </div>
     <div class="col-1">
@@ -9,7 +10,7 @@
     <div class="col-4">
         <p><%= @title %></p>
         <% if @users.any? %>
-            <div class="users fol1ow list_follow">
+            <div class="users fol1ow my_container">
                 <%= render @users %>
             </div>
         <% end %>

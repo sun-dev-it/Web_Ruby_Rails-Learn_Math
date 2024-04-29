@@ -1,9 +1,11 @@
-<div class="info_user">
+<div class="info_user my_container">
     <div class="name_user">
-    <%= avatar @user %>
-    <p> <%= @user.name %> </p>
-    <%= render 'shared/follow_form' if logged_in? %>
-    <%= render'shared/stats' %>
+        <div class="avatar_pf">
+            <%= image_tag @user.avatar if @user.avatar.attached? %>
+        </div>
+        <p> <%= @user.name %> </p>
+        <%= render 'shared/follow_form' if logged_in? %>
+        <%= render'shared/stats' %>
     </div>
 
     <div class="detail">

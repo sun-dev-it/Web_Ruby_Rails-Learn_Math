@@ -1,10 +1,20 @@
-<div>
-    <%= form_with(model: @snapshot, local: true) do |f| %>
-        <%= avatar @user %>
-        <%= render 'shared/error_messages', object: f.object %>
-        <%= f.text_area :content, placeholder: "Create a new snapshot ..." %>
-        <%= f.file_field :image, accept: "image/jpeg, image/gif, image/png" %>
-        <%= f.submit "Đăng"%>
-    <% end %>
-</div>
+<%= form_with(model: @snapshot, local: true) do |f| %>
+    <div class="row">
+        <div class="col-1">
+            <div class="avatar_wrapper_f_snapshot">
+                <%= image_tag @user.avatar if @user.avatar.attached? %>
+            </div>
+        </div>
+        <div class="col-11">
+            <%= render 'shared/error_messages', object: f.object %>
+            <%= f.text_area :content, placeholder: "Create a new snapshot ..." %>
+        </div>
+        <div class="col-10">
+            <%= f.file_field :image, accept: "image/jpeg, image/gif, image/png" %>
+        </div>
+        <div class="col-2">
+            <%= f.submit "Đăng"%>
+        </div>
+    </div>
+<% end %>
 

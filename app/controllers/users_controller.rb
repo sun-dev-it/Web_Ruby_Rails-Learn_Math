@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @snapshot = current_user.snapshots.build if logged_in?
     @snapshots = @user.snapshots.paginate(page: params[:page])
   end
 
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.avatar.attach(params[:user][:avatar])
     if @user.save
       log_in @user
       flash[:success] = "welcome to AI"
@@ -68,7 +70,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
     end
 
     def correct_user

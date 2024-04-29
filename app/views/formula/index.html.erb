@@ -1,0 +1,34 @@
+<% provide(:title, "Hoi-dap") %>
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-11">Thanh tim kiem</div>
+    <div class="col-1"></div>
+    <div class="col-3">
+        <div class="container_list">
+            <div class="title_cong_thuc"> <a href="/formula">Công thức</a></div>
+            <hr>
+            <a href="/hang_dang_thuc">Hằng đẳng thức</a>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="container_formula">
+            <% if request.path == '/formula' %>
+                <%= render 'cong_thuc' %>
+            <% elsif request.path == '/hang_dang_thuc' %>
+                <%= render 'hang_dang_thuc' %>
+            <% end %>
+        </div>
+    </div>
+
+
+    <div class="col-3">
+        <div class="my_container">
+            Đã lưu
+        </div>
+    </div>
+
+    <div class="col-1"></div>
+</div>
+

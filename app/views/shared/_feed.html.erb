@@ -1,4 +1,44 @@
 <% if @feed_items.any? %>
-    <%= render @feed_items %>
-    <%= will_paginate @feed_items, params: { controller: :pages, action: :hone } %>
+    <% @feed_items.each do |item| %>
+        <div class="my_container">
+            <div class="row">
+                <div class="col-2">
+                    <%= link_to item.user do %>
+                        <div class="avatar_wrapper">
+                            <%= image_tag @user.avatar if @user.avatar.attached? %>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="col-10">
+                    <%= item.user.name %>
+                </div>
+
+                <div class="col-12">
+                    <small><%= time_ago_in_words(item.created_at) %> </small>
+                </div>
+
+                <div class="col-12 snapshot_padding">
+                    <p class="content_snapshot"><%= item.content %></p>
+                    <div class = "img_snapshot"> 
+                        <%= image_tag item.image if item.image.attached? %> 
+                        <i class="fa-regular fa-heart tim_snapshot"> </i> 0
+                    </div>
+                </div>
+                <div class="col-10"></div>
+                <div class="col-2">
+                    <% if current_user.admin? %>
+                        <%= button_to "delete", item, method: :delete, data: { confirm: "xoa" } %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <br>
+      <% end %>
+    <%= will_paginate @feed_items, params: { controller: :pages, action: :home } %>
+
+
+
+
+
 <% end %>
+
