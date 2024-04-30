@@ -4,15 +4,17 @@
         <div class="col-5 padding_header">
             <div class="row">
                 <a href="/" class="col-4 color_header"><i class="fa-solid fa-house fa-xl" style="color: #ffffff;"></i> Trang Chu</a>
-                <a href="/help" class="col-4 color_header"><i class="fa-solid fa-comment fa-xl" style="color: #ffffff;"></i> Hoi & dap</a>
+                <a href="/help" class="col-4 color_header"><i class="fa-solid fa-comments fa-xl" style="color: #ffffff;"></i> Hoi & dap</a>
                 <a href="/formula" class="col-4 color_header"><i class="fa-solid fa-book fa-xl" style="color: #ffffff;"></i> Cong thuc</a>
             </div>
         </div>
 
         <div class="col-3">
             <ul>
-                <% if logged_in? %>
+                <% if logged_in?  %>
                     <div class="avatar_web menu">
+                        <i class="fa-solid fa-comment fa-xl" style="color: #ffffff;"></i>
+                        <i class="fa-solid fa-bell fa-xl" style="color: #ffffff;"></i>
                         <%= link_to current_user do %>
                             <%= image_tag @user.avatar if @user.avatar.attached? %>
                         <% end %>
