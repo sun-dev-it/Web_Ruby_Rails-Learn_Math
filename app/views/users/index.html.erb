@@ -1,15 +1,19 @@
 <div class="row">
-  <div class="col-2"><h1>Users</h1></div>
-  <div class="col-8 my_container">
-    <div id="users" class="row">
-      <h3 class="col-3"> Ten </h3>
-      <h3 class="col-6"> email </h3>
-      <h3 class="col-3"> link </h3>
+  <div class="col-1"></div>
+  <div class="col-2"><h5 class="my_container box_shadow">Quản lí người dùng</h5></div>
+  <div class="col-7 my_container">
+    <div class="row list_users">
+      <h5 class="col-3"> Tên </h5>
+      <h5 class="col-5"> Email </h5>
+      <h5 class="col-2"> Số bài đăng </h5>
+      <h5 class="col-2"> ID </h5>
+      <hr class="col-11">
 
       <% @users.each do |user| %>
-        <div class="col-3"> <%= user.name %> </div>
-        <div class="col-6"> <%= user.email %> </div>
-        <div class="col-3"><%= link_to "Show this user", user %></div>
+        <p class="col-3"> <%= user.name %> </p>
+        <p class="col-5"> <%= user.email %> </p>
+        <p class="col-2"> <%= @user.snapshots.count %> </p>
+        <p class="col-2"><%= link_to user.id, user %></p>
       <% end %>
     </div>
 

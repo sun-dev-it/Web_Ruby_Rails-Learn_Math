@@ -8,11 +8,27 @@
             <% end %>
         </div>
         <div class="col-10">
-            <%= @user.name %>
+            <div class="row">
+                <div class="col-10">
+                    <%= @user.name %>
+                </div>
+
+                <div class="col-2 menu"> 
+                    <i class="fa-solid fa-ellipsis" style="color: #000000;"></i>
+                    <div class="hide delete_snapshot_pf box_shadow">
+                        <% if current_user?(snapshot.user) or current_user.admin? %>
+                            <%= button_to " Xóa", snapshot, method: :delete, class:"fa-solid fa-trash", style:"color: #000000; background: none;" %>
+                            <li> Sao chép liên kết </li>
+                        <% end %>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <small><i class="fa-solid fa-clock" style="color: #404040;"></i>  <%= time_ago_in_words(snapshot.created_at) %> </small>
+                </div>
+            </div>
         </div>
-        <div class="col-12">
-            <small> <%= time_ago_in_words(snapshot.created_at) %> </small>
-        </div>
+
         <div class="col-12 snapshot_padding">
             <p class="content_snapshot"><%= snapshot.content %></p>
             <div class = "img_snapshot"> 
@@ -21,18 +37,13 @@
             </div>
         </div>
         <div class="col-4">
-            <i class="fa-regular fa-heart"></i> Thích
+            <%= render 'snapshots/like_form' if logged_in? %>
         </div>
-        <div class="col-4">
+        <div class="col-5">
             <i class="fa-solid fa-comment" style="color: #4a4a4a;"></i> Bình luận
         </div>
-        <div class="col-4">
-            <% if current_user?(snapshot.user) or current_user.admin? %>
-                <%= button_to "delete", snapshot, method: :delete, data: { confirm: "xoa" } %>
-            <% else %>
-                <i class="fa-solid fa-share" style="color: #2b2b2b;"></i> Chia sẻ
-            <% end %>
-
+        <div class="col-3">
+            <i class="fa-solid fa-share" style="color: #2b2b2b;"></i> Chia sẻ
         </div>
     </div>
 </div>

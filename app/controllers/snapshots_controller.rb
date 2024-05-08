@@ -9,13 +9,14 @@ class SnapshotsController < ApplicationController
             redirect_back(fallback_location: root_url)
         else
             @feed_items = current_user.feed.paginate(page: params[:page])
-            render 'pages/home'
+            flash[:danger] = "Bài viết chưa có nội dung!"
+            redirect_back(fallback_location: root_url)
         end
     end
 
     def destroy
         @snapshot.destroy
-        flash[:success] = "Da xoa snap"
+        flash[:success] = "Đã xóa bài viết"
         redirect_back(fallback_location: root_url)
     end
 
@@ -35,3 +36,4 @@ class SnapshotsController < ApplicationController
     end
 
 end
+

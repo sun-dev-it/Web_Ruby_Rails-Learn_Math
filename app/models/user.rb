@@ -3,15 +3,19 @@ class User < ApplicationRecord
     # avatar có thể trống
     before_save :set_default_avatar
     has_many :snapshots, dependent: :destroy
+
+
+
     has_many :active_relationships, class_name:     "Relationship", 
                                     foreign_key:    "follower_id", 
                                     dependent:      :destroy
-    
+
     has_many :passive_relationships, class_name:    "Relationship", 
                                      foreign_key:   "followed_id",
                                      dependent:      :destroy
     has_many :following, through:  :active_relationships, source: :followed
     has_many :followers, through:  :passive_relationships, source: :follower
+
 
 
     before_save {self.email = email.downcase}
@@ -44,8 +48,9 @@ class User < ApplicationRecord
 
     def set_default_avatar
         unless avatar.attached?
-          url = "https://upanh123.com/wp-content/uploads/2020/11/hinh-anh-con-meo-cute3.jpg"
-          avatar.attach(io: URI.open(url), filename: "default_avatar.jpg", content_type: 'image/jpg')
+          image_path = Rails.root.join("app", "assets", "images", "avatar_default", "avt.png")
+          image = File.open(image_path)
+          avatar.attach(io: image, filename: "default_avatar.png", content_type: 'image/png')
         end
     end
 end

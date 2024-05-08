@@ -1,0 +1,11 @@
+<div class="list_friend" >
+    <p><%= @friends.count %> bạn bè </p>
+    <div class="row">
+        <% @friends.take(3).each do |friend| %>
+            <div class="col-4">
+                <%= image_tag friend.avatar %>
+                <%= link_to friend.name, user_path(friend) %>
+            </div>
+        <% end %>
+    </div>
+</div>

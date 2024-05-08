@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user,  only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user,    only: [:edit, :update]
   before_action :admin_user,      only: :destroy
+  before_action :friends,         only: [:show, :update, :following, :followers, :edit]
   def index
     @user = User.find_by(params[:id])
     @users = User.paginate(page: params[:page])
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @snapshot = current_user.snapshots.build if logged_in?
-    @snapshots = @user.snapshots.paginate(page: params[:page])
+    @snapshots = @user.snapshots
   end
 
   def signup
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
 
 
   def edit
-    @user = User.find_by(params[:id])
+    @user = User.find(params[:id])
   end
 
   def create
@@ -31,17 +32,17 @@ class UsersController < ApplicationController
     @user.avatar.attach(params[:user][:avatar])
     if @user.save
       log_in @user
-      flash[:success] = "welcome to AI"
+      flash[:success] = "welcome"
       redirect_to @user
     else
-      flash[:danger] = "Nhap sai"
+      flash[:danger] = "Nhập sai"
       redirect_to signup_path
     end
   end
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Cap nhat thong tin"
+      flash[:success] = "Đã chỉnh sửa thông tin"
       redirect_to @user
     else
       render 'edit'
@@ -56,15 +57,13 @@ class UsersController < ApplicationController
 
   def following 
     @title = "Following"
-    @user = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page])
+    @users = @user.following
     render 'show_follow'
   end
 
   def followers
     @title = "Followers"
-    @user = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
+    @users = @user.followers
     render 'show_follow'
   end
 
@@ -75,11 +74,20 @@ class UsersController < ApplicationController
     end
 
     def correct_user
-      @user = User.find_by(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
+      @user = User.find(params[:id])
+      unless current_user == @user
+        flash[:error] = "Bạn không có quyền truy cập vào trang này."
+        redirect_to root_path
+      end
     end
 
     def admin_user
       redirect_to(root_url) unless current_user.admin?
+    end
+
+    def friends
+      @user = User.find(params[:id])
+      @following_users = @user.following
+      @friends = @following_users.select { |following_user| @user.followers.include?(following_user) }
     end
 end

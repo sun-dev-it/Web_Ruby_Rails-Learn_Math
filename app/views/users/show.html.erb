@@ -1,29 +1,38 @@
 <div class="row">
   <div class="col-1"></div>
   <div class="col-2">
-    <%= render 'shared/user_infor' %>
+    <%= render 'users/user_infor' %>
   </div>
 
   <div class="col-1">
-    <% unless current_page?(current_user) %>
-      <%= link_to current_user.name, current_user %>
-    <% end %>
   </div>
 
   <div class="col-4">
     <div class="my_container">
-      <%= render 'shared/snapshot_form' %>
+      <%= render 'snapshots/snapshot_form' %>
     </div>
     <br>
     <div>
       <% if @user.snapshots.any? %>
-          <%= render @snapshots %>
+        <%= render @snapshots %>
+      <% else %>
+        <div class="my_container snapshot_none">
+          <center> Bạn chưa có bài đăng nào ... </center>
+        </div>
       <% end %>
     </div>
   </div>
+
+  
   <div class="col-3">
-    <div class="my_container">
-      Da luu
+    <div class="my_container ">
+      <i class="fa-solid fa-bookmark" style="color: #2e2e2e;"></i> 
+      <b>Đã lưu</b>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <hr>
     </div>
   </div>
 

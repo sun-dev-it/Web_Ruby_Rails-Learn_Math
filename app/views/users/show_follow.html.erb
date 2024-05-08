@@ -2,16 +2,28 @@
 <div class="row">
     <div class="col-1"></div>
     <div class="col-2">
-      <%= render 'shared/user_infor' %>
+      <%= render 'users/user_infor' %>
     </div>
-    <div class="col-1">
-        <%= link_to current_user.name, current_user %>
-    </div>
+    <div class="col-1"></div>
     <div class="col-4">
-        <p><%= @title %></p>
         <% if @users.any? %>
             <div class="users fol1ow my_container">
-                <%= render @users %>
+                <h5><%= @title %></h5>
+                <hr>
+                <div class="row">
+                    <% @users.each do |user| %>
+                        <div class="col-1 list_follow"> <%= image_tag user.avatar %> </div>
+                        <div class="col-9"> <%= link_to user.name, user_path(user) %> </div>
+                        <div class="col-2 menu"> 
+                            <i class="fa-solid fa-ellipsis" style="color: #000000;"></i>
+                            <% unless current_user %>
+                                <div class="hide my_container box_shadow list_unfollow">
+                                    Bỏ follow
+                                </div>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </div>
             </div>
         <% end %>
     </div>
