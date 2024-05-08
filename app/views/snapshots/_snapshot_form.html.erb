@@ -1,0 +1,24 @@
+<%= form_with(model: @snapshot, local: true,) do |f| %>
+    <div class="row">
+        <div class="col-1">
+            <div class="avatar_wrapper_f_snapshot">
+                <%= image_tag current_user.avatar if current_user.avatar.attached? %>
+            </div>
+        </div>
+        <div class="col-11">
+            <%= render 'shared/error_messages', object: f.object %>
+            <%= f.text_area :content, placeholder: "Create a new post ...", class:"form_create_snapshot" %>
+        </div>
+        <div class="col-12"> <hr> </div>
+        <div class="col-10 menu">
+            <i class="fa-solid fa-image fa-lg choose_file_snapshot" style="color: #262626;"></i> Ảnh
+            <div class="hide my_container_shadow"> 
+                <%= f.file_field :image, class: "choose_file_snapshot", style:"color: #383838;" %>
+            </div>
+        </div>
+        <div class="col-2">
+            <%= f.submit "Đăng"%>
+        </div>
+    </div>
+<% end %>
+

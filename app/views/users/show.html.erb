@@ -1,31 +1,40 @@
 <div class="row">
   <div class="col-1"></div>
+  <div class="col-2">
+    <%= render 'users/user_infor' %>
+  </div>
+
+  <div class="col-1">
+  </div>
+
   <div class="col-4">
-    <%= avatar @user %>
-    <p> Ten <%= @user.name %> </p>
-    <p> Email <%= @user.email %> </p>
-    <%= render 'follow_form' if logged_in? %>
-    <p class="stats">
-      <%= render'shared/stats' %>
-    </p>
-    <%= button_to "Destroy this user", @user, method: :delete, data: { confirm: "chac chan xoa?" } %>
+    <div class="my_container">
+      <%= render 'snapshots/snapshot_form' %>
+    </div>
+    <br>
+    <div>
+      <% if @user.snapshots.any? %>
+        <%= render @snapshots %>
+      <% else %>
+        <div class="my_container snapshot_none">
+          <center> Bạn chưa có bài đăng nào ... </center>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   
-  <div class="col-5">Gioi thieu
-    <% if @user.snapshots.any? %>
-      <h3> Bài viết <%= @user.snapshots.count %></h3>
-      <ol class="snapshots">
-        <%= render @snapshots %>
-      </ol>
-      <%= will_paginate @snapshots %>
-    <% end %>
-    <div>
-      <% if current_user.admin? %>
-        <%= link_to "Users", users_path %>   
-      <% end %>
+  <div class="col-3">
+    <div class="my_container ">
+      <i class="fa-solid fa-bookmark" style="color: #2e2e2e;"></i> 
+      <b>Đã lưu</b>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <hr>
     </div>
-
   </div>
+
   <div class="col-1"></div>
 </div>

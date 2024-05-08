@@ -1,23 +1,30 @@
 <% provide(:title, "follow") %>
 <div class="row">
-    <aside class="col-4">
-        <section class="user_info">
-            <%= avatar @user %>
-            <h1><%= @user.name %></h1>
-            <span><%= link_to "view my profile", @user %></span>
-            <span><b>Snapshots:</b> <%= @user.snapshots.count %></span>
-        </section>
-        <section class="stats">
-            <%= render 'shared/stats' %>
-        </section>
-    </aside>
-    <div class="col-8">
-        <h3><%= @title %></h3>
+    <div class="col-1"></div>
+    <div class="col-2">
+      <%= render 'users/user_infor' %>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-4">
         <% if @users.any? %>
-            <ul class="users fol1ow">
-                <%= render @users %>
-            </ul>
-            <%= will_paginate %>
+            <div class="users fol1ow my_container">
+                <h5><%= @title %></h5>
+                <hr>
+                <div class="row">
+                    <% @users.each do |user| %>
+                        <div class="col-1 list_follow"> <%= image_tag user.avatar %> </div>
+                        <div class="col-9"> <%= link_to user.name, user_path(user) %> </div>
+                        <div class="col-2 menu"> 
+                            <i class="fa-solid fa-ellipsis" style="color: #000000;"></i>
+                            <% unless current_user %>
+                                <div class="hide my_container box_shadow list_unfollow">
+                                    Bỏ follow
+                                </div>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
         <% end %>
     </div>
 </div>

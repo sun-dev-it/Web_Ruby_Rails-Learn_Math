@@ -1,24 +1,37 @@
-<% provide(:title, "Dang ki") %>
+<% provide(:title, "Tạo tài khoản") %>
 
 <div class="row">
   <div class="col-3"></div>
-  <div class="col-6 row box-user">
+  <div class="col-6 row my_container">
     <div class="col-6">
-      <h1>Tao tai khoan</h1>
-      <%= form_with(model: @user, local: true) do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
-        <ul>
-          <li> Ten <%= f.text_field :name %> </li>
+      <h4>Tạo tài khoản</h4>
+      <%= form_with(model: @user, local: true) do |form| %>
+        <%= render 'shared/error_messages', object: form.object %>
+        <p>
+          <%= form.label :name, "Tên" %>
+          <%= form.text_field :name %>
+        </p>
 
-          <li> Email <%= f.text_field :email %> </li>
+        <p>
+          <%= form.label :email %>
+          <%= form.text_field :email %>
+        </p>
 
-          <li> Mat khau<%= f.text_field :password %> </li>
+        <p>
+          <%= form.label :password, "Mật khẩu" %>
+          <%= form.text_field :password %>
+        </p>
 
-          <li> Nhap lai mat khau<%= f.text_field :password_confirmation %> </li>
+        <p>
+          <%= form.label :password_confirmation, "Nhâp lại mật khẩu" %>
+          <%= form.text_field :password_confirmation %>
+        </p>
           
-          <p class=""> <%= f.submit "Tao tai khoan" %> </p>
+        <p> Ảnh đại diện <%= form.file_field :avatar %> </p>
+          
+          <p class=""> <%= form.submit "Tạo tài khoản" %> </p>
           <hr class="hr">
-          <p class=""> <%= link_to "dang nhap", login_path %> </p>
+          <p class=""> <%= link_to "Đăng nhập", login_path %> </p>
         </ul>
       <% end %>
     </div>

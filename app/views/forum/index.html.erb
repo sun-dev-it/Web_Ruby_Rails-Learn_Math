@@ -1,0 +1,38 @@
+<% provide(:title, "Hoi-dap") %>
+<% if logged_in? %>
+<div class="row">
+    <div class="col-1"></div>
+
+    <div class="col-2">
+        <div class="my_container fixed_div box_shadow">
+            <i class="fa-solid fa-magnifying-glass"></i> Thanh tìm kiếm
+            <li><a href="#" >Bài viết</a></li>
+            <hr>
+        </div>
+    </div>
+
+    <div class="col-1 line_left"></div>
+
+    <div class="col-4">
+        <div class="my_container">
+            <%= render 'snapshots/snapshot_form' %>
+        </div>
+        
+        <br>
+
+        <div>
+            <%= render 'snapshots/feed' %>
+        </div>
+    </div>
+
+
+    <div class="col-4"></div>
+</div>
+
+<% else %>
+
+    <div>
+        <h1> Vui long dang nhap</h1>
+    </div>
+
+<% end %>

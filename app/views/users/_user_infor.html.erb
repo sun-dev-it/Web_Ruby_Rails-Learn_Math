@@ -1,0 +1,67 @@
+<div class="info_user my_container fixed_div_infor_user box_shadow">
+    <div class="name_user">
+        <div class="avatar_pf menu_click", onclick="showDiv()">
+            <%= image_tag @user.avatar if @user.avatar.attached? %>
+        </div>
+        
+        <script>
+            function showDiv() {
+            var div = document.getElementById("myDiv");
+            div.style.display = "block";
+            }
+        
+            function hideDiv() {
+            var div = document.getElementById("myDiv");
+            div.style.display = "none";
+            }
+        </script>
+        
+        <% if current_user?(@user) %>
+            <div class="update_avatar" id="myDiv">
+                <%= render 'users/avatar' %>
+            </div>
+        <% end %>
+
+        <%= @user.name %>
+        <%= render 'shared/follow_form' if logged_in? %>
+        <%= render 'shared/stats' %>
+    </div>
+    
+    <div class="detail">
+        <hr>
+        <li><b>Giới thiệu</b></li>
+        <center>Hello, I am the admin of the website!</center>
+        <li class="list_friend"> 
+            <i class="fa-solid fa-user-group" style="color: #454545;"></i> 
+            <b>Bạn bè</b> 
+            <% if @friends.any? %>
+                <%= render "users/friend" %>
+            <% else %>
+                <p>Bạn chưa có bạn bè.</p>
+            <% end %>
+        </li>
+        
+        <p> 
+            <i class="fa-solid fa-pen-to-square" style="color: #454545;"></i> 
+            <b>Số bài đăng:</b> <%= @user.snapshots.count %>
+        </p>
+
+        <% if current_user.admin? or current_user?(@user) %>
+            <p> 
+                <i class="fa-solid fa-envelope" style="color: #454545;"></i> 
+                <b>Email:</b> <%= @user.email %> 
+            </p>
+        <% end %>
+        
+        <% if current_user?(@user) %>
+            <div class="edit_pf"> <i class="fa-solid fa-gears" style="color: #454545;"></i> <%= link_to "Chỉnh sửa thông tin", edit_user_path(current_user) %> </div>
+        <% end %>
+        
+        <% if current_user.admin? %>
+            <div class="edit_pf"> <i class="fa-solid fa-layer-group" style="color: #2e2e2e;"></i> <%= link_to "Quản lí người dùng", users_path %> </div>
+            <% unless request.path == '/users/1' or request.path == '/users/1/edit' %>
+                <div class="delete_users"><%= button_to "Xóa tài khoản", @user, method: :delete, data: { confirm: "chac chan xoa?" } %></div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
