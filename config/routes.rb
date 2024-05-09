@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  root 'exercise#index'
+  root 'home#index'
 
   get '/help', to: 'forum#index'
-  
-  get '/formula', to: 'formula#index'
-  get '/hang_dang_thuc', to: 'formula#index'
+  get '/flashcard', to: 'flashcard#index'
+  get '/hang_dang_thuc', to: 'flashcard#index'
 
   get '/users', to: 'users#index'
   get '/signup', to: 'users#new'

@@ -32,8 +32,8 @@ body {
     .update_avatar{
         margin: 6px 0;
         text-align: right;
-        width: 260px;
-        z-index: 2;
+        width: 360px;
+        z-index: 10;
         background: #f7f7f7;
         border-radius: 3px;
         box-shadow: 1px 1px 4px;
@@ -43,9 +43,31 @@ body {
             border: none;
         }
     }
+    // user/edit
+    .item_edit_pf {
+        padding: 0 50px;
+        input {
+            width: 100%;
+        }
+        .change_edit_pf{
+            width: 80px;
+        }
+        div {
+            margin: 5px 0;
+        }
+    }
     // user/index
     .list_users {
+        padding: 0 50px;
         margin-top: 14px;
+        li {
+            margin: 5px 0;
+        }
+        img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
     }
     // users/show_follow
     .list_follow {
@@ -101,6 +123,7 @@ body {
         margin-left: -40px;
         width: 380px;
         position: fixed;
+        z-index: 9;
     }
     .delete_users {
         margin: 18px 0 0 230px;
@@ -119,6 +142,23 @@ body {
         a:hover {
             color: #000000;
             text-decoration: underline;
+        }
+    }
+
+    // users/_new
+    .item_tao_user{
+        padding: 0 10px;
+        input {
+            width: 100%;
+        }
+        .change_edit_pf{
+            width: 80px;
+        }
+        div {
+            margin: 5px 0;
+        }
+        .nut_dangnhap:hover{
+            background: #d4d4d4;
         }
     }
 
@@ -146,11 +186,42 @@ body {
             font-size: 120%;
         }
     }
+    // sessions/new
+    .item_dangnhap{
+        padding: 0 30px 5px 10px;
+        input {
+            width: 100%;
+        }
+        .nut_dangnhap{
+            width: 100px;
+        }
+        div {
+            margin: 5px 0;
+        }
+        .nut_dangnhap:hover{
+            background: #d4d4d4;
+        }
+    }
+    .nut_taotaikhoan{
+        text-align: center;
+        a {
+            background: #ebebeb;
+            padding: 8px 12px;
+            color: #000000;
+            border: 1px solid rgb(180, 180, 180);
+            border-radius: 6px;
+        }
+
+        a:hover {
+            background: #d4d4d4;
+        }
+    }
 }
 
 
 
 .footer {
+    z-index: 1100;
     padding: 5px;
     background-color: #3d3d3d;
     height: 50px;

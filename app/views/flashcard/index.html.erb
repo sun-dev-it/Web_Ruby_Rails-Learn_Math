@@ -1,0 +1,35 @@
+<% provide(:title, "Hoi-dap") %>
+
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-2">
+        <div class="my_container fixed_div box_shadow">
+            <i class="fa-solid fa-magnifying-glass"></i> Thanh tìm kiếm
+            <div class="title_cong_thuc"> 
+                <a href="/flashcard">Công thức</a>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <div class="col-1"></div>
+
+    <div class="col-4">
+        <div class="my_container">
+            <% if request.path == '/flashcard' %>
+                <%= render 'cong_thuc' %>
+            <% end %>
+        </div>
+    </div>
+
+
+    <div class="col-3">
+        <div class="my_container">
+            Đã lưu
+        </div>
+    </div>
+
+    <div class="col-1"></div>
+</div>
+

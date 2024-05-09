@@ -189,7 +189,12 @@ body {
 
 
 
-
+hr.vertical {
+    border: none;
+    border-left: 2px solid rgb(204, 204, 204);
+    height: 100%;
+    margin-top: -2px;
+  }
 
 a:hover {
     text-decoration: none;
