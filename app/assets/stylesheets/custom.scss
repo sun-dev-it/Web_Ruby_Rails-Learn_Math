@@ -20,6 +20,37 @@
 }
 
 body {
+    // home/index
+    .listn5_content {
+        display: none;
+    }
+    #list1, #list2 {
+        display: none;
+        li {
+            margin-left: -30px;
+        }
+
+        .bg_list1 {
+            padding: 0 15px;
+            background: #e6e6e6;
+        }
+        .bg_list2 {
+            padding: 0 15px;
+        }
+    }
+    .bang_chu_cai{
+        padding: 2px 10px;
+    }
+
+
+    .mui_ten_home1,  .mui_ten_home2 {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
+    }
+    .mui_ten_home_90 {
+        transform: rotate(180deg);
+    }
+
     // users/show
     .container_user_info{
         margin-left: 10px;
@@ -171,19 +202,6 @@ body {
         border-radius: 6px;
         button {
             border: 0;
-        }
-    }
-    // formula
-    .container_formula {
-    padding: 20px;
-    border: 1px solid black;
-    }
-    .title_cong_thuc {
-        text-align: center;
-
-        a {
-            color: black;
-            font-size: 120%;
         }
     }
     // sessions/new

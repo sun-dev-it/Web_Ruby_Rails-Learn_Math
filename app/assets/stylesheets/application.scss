@@ -24,7 +24,7 @@
  @import 'font-awesome';
 body {
     margin: 0;
-    background: rgb(240, 240, 240);
+    background: rgb(214, 214, 214);
     .main_web{
         min-height: 730px;
         padding-top: 80px;
@@ -181,12 +181,9 @@ body {
     visibility: visible;
 }
 
-#myDiv {
+#div_hide_click {
     display: none;
 }
-
-
-
 
 
 hr.vertical {
