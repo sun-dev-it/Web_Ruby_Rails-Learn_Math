@@ -8,7 +8,7 @@
    2. Posts: Create, Delete
 
 # Demo chi tiết
-   1. User
+   ## User
       - Sign up
       - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/sign_up.png" alt="" width="600">
       - Sign in
@@ -26,7 +26,7 @@
       - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/friends.png" alt="" width="300">
       - Post an article: photos can be attached
       - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/profile.png" alt="" width="600">
-   3. Admin 
+   ## Admin 
       - Only admin can delete user, see list of users
       - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/delete_user.png" alt="" width="300">
       - Can delete user's posts
