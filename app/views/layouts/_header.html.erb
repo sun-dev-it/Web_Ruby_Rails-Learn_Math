@@ -1,17 +1,25 @@
 <div class="header">
     <div class="row">
         <div class="col-4">
-            <div class="logo_web">
-                <%= image_tag("logo_web/logo.png") %>
-            </div>
+            <%= image_tag("logo_web/logo.png", class:"logo_web") %>
         </div>
-        <div class="col-5 padding_header">
+        <div class="col-4">
             <div class="row">
-                <a href="/" class="col-4 color_header"><i class="fa-solid fa-house fa-xl" style="color: #ffffff;"></i> Trang chủ</a>
-                <a href="/help" class="col-4 color_header"><i class="fa-solid fa-comments fa-xl" style="color: #ffffff;"></i> Hỏi & đáp</a>
-                <a href="/flashcard" class="col-4 color_header"><i class="fa-solid fa-book fa-xl" style="color: #ffffff;"></i> Flashcard</a>
+                <a href="/" class="col-4 color_header">
+                    <i class="fa-solid fa-house fa-xl" style="color: #ffffff;"></i> 
+                    Trang chủ
+                </a>
+                <a href="/help" class="col-4 color_header">
+                    <i class="fa-solid fa-comments fa-xl" style="color: #ffffff;"></i> 
+                    Hỏi & đáp
+                </a>
+                <a href="/flashcard" class="col-4 color_header">
+                    <i class="fa-solid fa-book fa-xl" style="color: #ffffff;"></i> 
+                    Flashcard
+                </a>
             </div>
         </div>
+
 
         <div class="col-3">
             <ul>
@@ -20,11 +28,13 @@
                         <i class="fa-solid fa-comment fa-xl" style="color: #ffffff;"></i>
                         <i class="fa-solid fa-bell fa-xl" style="color: #ffffff;"></i>
                         <%= link_to current_user do %>
-                            <%= image_tag current_user.avatar if current_user.avatar.attached? %>
+                            <%= image_tag current_user.avatar, class:"avt_header" if current_user.avatar.attached? %>
                         <% end %>
                         <div class="menu_pf hide">
-                            <li> <%= image_tag current_user.avatar if current_user.avatar.attached? %> <%= link_to current_user.name, current_user, class: "color_header"%> <hr></li>
+                            <li> <%= image_tag current_user.avatar, class:"avt_header" if current_user.avatar.attached? %> <%= link_to current_user.name, current_user, class: "color_header"%></li>
+                            <hr>
                             <li> <i class="fa-solid fa-gears" style="color: #ffffff;"></i> <%= link_to "Chỉnh sửa thông tin", edit_user_path(current_user), class: "color_header" %> </li>
+                            <li> <i class="fa-solid fa-layer-group" style="color: #ffffff;"></i> <%= link_to "Quản lí người dùng", users_path, class: "color_header" %> </li>
                             <li> <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> <%= link_to "Đăng xuất", logout_path, method: :delete, class: "color_header" %> </li>
                         </div>
                     </div>
@@ -33,5 +43,8 @@
                 <% end %>
             </ul>
         </div>
+
+        <div class="col-1"></div>
+
     </div>
 </div>

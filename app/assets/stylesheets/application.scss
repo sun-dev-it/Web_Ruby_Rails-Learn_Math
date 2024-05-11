@@ -36,39 +36,14 @@ body {
     padding: 0;
 }
 
-// user
-.menu_pf {
-    width: 40%;
-    z-index: 1;
-    margin-left: 5%;
-    padding: 3%;
-    background: #5c5c5c;
-    color: rgb(255, 255, 255);
-    border-radius: 5px;
-
-    li {
-        a {
-            color: rgb(0, 0, 0);
-        }
-    }
-}
-
 
 //avatars
 .avatar_pf {
-    padding: 15px;
-    margin-left: 129px;
-    width: 100px;
-    height: 100px;
+    margin: 4px 40%;
+    max-width: 20%;
+    max-height: 20%;
     background: rgb(218, 218, 218);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 50%;
-    img {
-        width: 100px;
-        border-radius: 50%;
-    }
 }
 .avatar_wrapper {
     padding: 0;
@@ -96,20 +71,35 @@ body {
     i {
         margin: -5px 17px 0 17px;
     }
-    img {
+    .avt_header {
         margin: 0 0 6px 7px;
         width: 36px;
         height: 36px;
         border-radius: 50%;
     }
     .menu_pf {
-        margin-left: 30%;
         width: 50%;
-        i{
-            margin: 0;
+        z-index: 1;
+        margin-left: 30%;
+        padding: 4px 8px;
+        background: #5c5c5c;
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
+        
+
+        li {
+            padding: 5px 8px;
+            margin: 4px 0;
+            border-radius: 5px;
+            i {
+                margin: 0;
+            }
+            a {
+                padding: 0;
+            }
         }
-        li{
-            margin: 10px 15px 10px 0;
+        li:hover {
+            background: #8b8b8b;
         }
     }
 }
@@ -146,11 +136,6 @@ body {
     padding-left: 15px;
     border: 1px solid rgb(128, 128, 128);
 }
-.choose_file_snapshot{
-    margin-left: 16px;
-    border: none;
-}
-
 
 
 
@@ -209,6 +194,7 @@ hr {
     width: 200px;
     position: fixed;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -231,5 +217,9 @@ small {
 }
 
 .box_shadow {
-    box-shadow: 1px 1px 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.color_normal {
+    color: rgb(17, 17, 17);
 }

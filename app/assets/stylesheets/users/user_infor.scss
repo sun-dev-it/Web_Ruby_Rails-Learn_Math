@@ -1,0 +1,75 @@
+// users/_user_infors
+.info_user {
+    margin: 0 10%;
+    .name_user {
+        text-align: center;
+    }
+    .detail {
+        padding: 5px;
+        li {
+            font-size: 18px;
+            margin: 8px 5px 2px;
+            color: rgb(14, 14, 14);
+        }
+        .padding_chinh_sua a {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .edit_pf {
+            background: #e2e2e2;
+            padding: 6px 20%;
+            border-radius: 7px;
+            margin: 5px 0;
+            color: rgb(17, 17, 17)
+        }
+
+        .quan_li_pf {
+            background: #e2e2e2;
+            padding: 6px 20%;
+            border-radius: 7px;
+            margin: 5px 2px;
+            color: rgb(17, 17, 17)
+        }
+
+        .edit_pf:hover, .quan_li_pf:hover {
+            background: #c4c4c4;
+        }
+
+        .list_friend {
+            img {
+                border-radius: 8px;
+                width: 50px;
+                height: 50px;
+                background: #e4e4e4;
+            }
+        }
+    }
+}
+.fixed_div_infor_user {
+    position: fixed;
+    z-index: 9;
+}
+.delete_users {
+    float: right;
+    button {
+        border: 1px solid rgb(134, 134, 134);
+        box-shadow: 1px 1px 3px;
+    }
+}
+
+// avatar
+.update_avatar{
+    margin: 6px 0;
+    text-align: right;
+    width: 360px;
+    z-index: 10;
+    background: #f7f7f7;
+    border-radius: 3px;
+    box-shadow: 1px 1px 4px;
+    padding: 5px;
+    .chosse_image_avt {
+        width: 100%;
+        border: none;
+    }
+}

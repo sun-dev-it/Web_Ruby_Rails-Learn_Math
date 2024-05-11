@@ -1,0 +1,15 @@
+// forum/index
+.fix_div_forum {
+    margin-left: 8%;
+    position: fixed;
+    padding: 0;
+    border-radius: 5px;
+    .list_forum{
+        li {
+            margin-left: -20px;
+            a {
+                color: #000000;
+            }
+        }
+    }
+}

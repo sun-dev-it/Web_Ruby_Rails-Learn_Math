@@ -1,0 +1,12 @@
+.container_use_flashcard{
+    display: flex;
+    justify-content: center;
+    .use_flashcard {
+        margin-top: 10%;
+        width: 50%;
+        text-align: center;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+}

@@ -1,3 +1,4 @@
+
 function showDiv() {
   var div = document.getElementById("div_hide_click");
   div.style.display = "block";
@@ -24,24 +25,21 @@ function listn5(i) {
 function toggleDiv(item, mui_ten) {
   var div = document.getElementById(item);
   var element = document.querySelector(mui_ten);
-  element.classList.toggle("mui_ten_home_90");
+  element.style.transform = "rotate(180deg)";
     
   if (div.style.display === "block") {
     div.style.display = "none";
+    element.style.transform = "rotate(90deg)";
   } else {
     div.style.display = "block";
   }
 }
 
-function loadContent(bai) {
-  // Xóa nội dung placeholder
-  document.getElementById('renderedContent').innerHTML = '';
-  // Gửi yêu cầu đến server và nhận nội dung được render
-  console.log(new Error().stack);
-  fetch('/' + bai)
-    .then(response => response.text())
-    .then(content => {
-      document.getElementById('renderedContent').innerHTML = content;
-    })
-    .catch(error => console.log(error));
+
+function changediv(item1, item2) {
+  var item_1 = document.getElementById(item1);
+  var item_2 = document.getElementById(item2);
+  console.log(item1, item2);
+  item_1.style.display = "none";
+  item_2.style.display = "block";
 }

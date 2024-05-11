@@ -1,9 +1,10 @@
 <div class="row">
-  <div class="col-1"></div>
-  <div class="col-2">
+  <div class="col-3"></div>
+  <div class="col-4 fixed_div_infor_user">
     <%= render 'users/user_infor' %>
   </div>
 
+  
   <div class="col-1">
   </div>
 
@@ -26,13 +27,16 @@
   
   <div class="col-3">
     <div class="my_container ">
-      <i class="fa-solid fa-bookmark" style="color: #2e2e2e;"></i> 
-      <b>Đã lưu</b>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <h5>
+        <center>
+          <i class="fa-solid fa-bookmark" style="color: #2e2e2e;"></i> 
+          <b>Đã lưu</b>
+        </center>
+      </h5>
       <hr>
+
+      <%= render 'snapshots/user_save/snapshots' %>
+      <%= render 'flashcard/user_save/flashcard' %>
     </div>
   </div>
 

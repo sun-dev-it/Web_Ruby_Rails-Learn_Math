@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   get '/help', to: 'forum#index'
   get '/flashcard', to: 'flashcard#index'
-  get '/hang_dang_thuc', to: 'flashcard#index'
 
   get '/users', to: 'users#index'
   get '/signup', to: 'users#new'

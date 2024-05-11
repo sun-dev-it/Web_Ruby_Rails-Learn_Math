@@ -1,0 +1,30 @@
+// sessions/new
+.item_dangnhap{
+    padding: 0 30px 5px 10px;
+    input {
+        width: 100%;
+    }
+    .nut_dangnhap{
+        width: 100px;
+    }
+    div {
+        margin: 5px 0;
+    }
+    .nut_dangnhap:hover{
+        background: #d4d4d4;
+    }
+}
+.nut_taotaikhoan{
+    text-align: center;
+    a {
+        background: #ebebeb;
+        padding: 8px 12px;
+        color: #000000;
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 6px;
+    }
+
+    a:hover {
+        background: #d4d4d4;
+    }
+}
