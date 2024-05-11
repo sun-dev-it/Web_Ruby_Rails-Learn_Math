@@ -10,13 +10,13 @@
 # Demo chi tiết
    1. User
       - Sign up
-      - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/sign_up.png" alt="" width="300">
+      - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/sign_up.png" alt="" width="600">
       - Sign in
-      - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/sign_in.png" alt="" width="300">
+      - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/sign_in.png" alt="" width="600">
       - Sign out
       - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/sign_out.png" alt="" width="300">
       - Edit user
-      - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/edit_user.png" alt="" width="300">
+      - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/edit_user.png" alt="" width="500">
       - Change avatar user
       - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/change_avt.png" alt="" width="300">
       - Follow/unfollow
@@ -25,7 +25,7 @@
       - Friends
       - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/friends.png" alt="" width="300">
       - Post an article: photos can be attached
-      - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/profile.png" alt="" width="300">
+      - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/profile.png" alt="" width="600">
    3. Admin 
       - Only admin can delete user, see list of users
       - <img src="https://github.com/sun-dev-it/Web_Ruby_Rails-Learn_Math/blob/main/app/assets/images/web_introduction/delete_user.png" alt="" width="300">
