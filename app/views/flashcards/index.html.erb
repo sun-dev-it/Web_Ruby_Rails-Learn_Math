@@ -8,7 +8,12 @@
             <i class="fa-solid fa-magnifying-glass"></i> Thanh tìm kiếm
             <hr>
             <ul class="list_forum">
-                <li><a href="#" >Flashcard</a></li>
+                <li><b><a href="#" >Flashcard</a></b></li>
+                <% if @grouped_flashcards.present? %>
+                    <% @grouped_flashcards.each do |title, flashcards| %>
+                        <li> <%= link_to title, flashcards_path(current_flashcard_index: 0, selected_title: title) %></li>
+                    <% end %>
+                <% end %>
             </ul>
         </div>
     </div>
@@ -17,7 +22,7 @@
 
     <div class="col-4">
         <div class="my_container">
-            <%= render 'flashcard/flashcard' %>
+            <%= render 'flashcards/flashcard' %>
         </div>
     </div>
 
@@ -26,6 +31,7 @@
         <ul class="my_container">
             <i class="fa-solid fa-bookmark" style="color: #2e2e2e;"></i> 
             <b> Đã lưu </b>
+            <p><a href="/flashcards/new">Thêm flashcard</a></p>
         </ul>
     </div>
 

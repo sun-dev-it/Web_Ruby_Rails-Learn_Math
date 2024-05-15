@@ -4,6 +4,8 @@
 
 //= link home/index.css
 
+//= link layouts/header.css
+
 //= link users/user_infor.css
 //= link users/show.css
 //= link users/index.css

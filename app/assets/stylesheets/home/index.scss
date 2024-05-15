@@ -2,7 +2,7 @@
 .listn5_content {
     display: none;
 }
-#list1, #list2 {
+#list0, #list1, #list2 {
     display: none;
     li {
         margin-left: -30px;
@@ -10,10 +10,16 @@
 
     .bg_list1 {
         padding: 0 15px;
-        background: #e6e6e6;
+        background: #d6d6d6;
     }
     .bg_list2 {
         padding: 0 15px;
+        background: #e6e6e6;
+    }
+
+    .bg_list1:hover, .bg_list2:hover {
+        background: #aaaaaa;
+        cursor: pointer;
     }
 }
 .bang_chu_cai{
@@ -35,7 +41,16 @@
 }
 
 
-.mui_ten_home1,  .mui_ten_home2 {
+.mui_ten_home0, .mui_ten_home1,  .mui_ten_home2 {
     transform: rotate(90deg);
     transition: transform 0.3s ease;
+}
+
+.hover_list_home {
+    padding: 1px 2px;
+    border-radius: 4px;
+}
+.hover_list_home:hover {
+    background: #e6e6e6;
+    cursor: pointer;
 }

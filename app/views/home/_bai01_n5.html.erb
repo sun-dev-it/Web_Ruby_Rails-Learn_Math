@@ -1,1 +1,21 @@
-Bai 1
+<% if @flashcards %>
+    <% @flashcards.each do |flashcard| %>
+        <div class="row">
+            <div class="col-1">
+                <%= flashcard.hiragana %>
+            </div>
+
+            <div class="col-4">
+                <%= flashcard.hiragana %>
+            </div>
+
+            <div class="col-3">
+                <%= flashcard.kanji %>
+            </div>
+
+            <div class="col-4">
+                <%= flashcard.meaning %>
+            </div>
+        </div>
+    <% end %>
+<% end %>

@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-2">
+        <%= @flashcard.hiragana %>
+    </div>
+
+    <div class="col-3">
+        <%= @flashcard.hiragana %>
+    </div>
+
+    <div class="col-3">
+        <%= @flashcard.kanji %>
+    </div>
+
+    <div class="col-3">
+        <%= @flashcard.meaning %>
+    </div>
+    <div class="col-1">
+        <%= link_to 'Destroy', flashcard_path(@flashcard), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+</div>

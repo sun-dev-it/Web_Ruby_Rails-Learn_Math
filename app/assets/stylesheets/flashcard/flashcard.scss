@@ -3,10 +3,35 @@
     justify-content: center;
     .use_flashcard {
         margin-top: 10%;
-        width: 50%;
+        width: 80%;
+        height: 350px;
         text-align: center;
         padding: 30px;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        .flashcard {
+            height: 280px;
+        }
+        .font_flashcard_show {
+            font-size: 38px;
+        }
+        .font_flashcard_hide {
+            font-size: 30px;
+        }
+    }
+}
+
+.flashcard-controls{
+    .prev-button {
+        float: right;
+        background: none;
+        border: none;
+        float: left;
+    }
+    .next-button{
+        float: right;
+        background: none;
+        border: none;
+        float: right;
     }
 }

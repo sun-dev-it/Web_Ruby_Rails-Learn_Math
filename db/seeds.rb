@@ -1,3 +1,4 @@
+=begin
 Snapshot.delete_all
 User.delete_all
 
@@ -42,3 +43,9 @@ users.each do |user|
     next if user == admin
     user.follow(admin)
 end
+
+=end
+
+
+#N5
+Flashcard.delete_all

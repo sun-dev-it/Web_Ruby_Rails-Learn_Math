@@ -1,24 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-// sessions/new
-.item_dangnhap{
-    padding: 0 30px 5px 10px;
+// users/_new
+.item_tao_user{
+    padding: 0 10px;
     input {
         width: 100%;
         border-radius: 4px;
         border: 1px solid #bb2525;
+    }
+    .change_edit_pf{
+        width: 80px;
+    }
+    div {
+        margin: 5px 0;
     }
     .nut_dangnhap{
         width: 100%;
         background: #bb2525;
         color: white;
     }
-    div {
-        margin: 5px 0;
-    }
     .nut_dangnhap:hover{
         background: #941212;
     }
 }
+
 .nut_taotaikhoan{
     text-align: center;
     a {
@@ -32,10 +35,6 @@
     a:hover {
         background: #f3adad;
     }
-}
-
-.container_login {
-    margin-top: 40px;
 }
 
 .title_login {

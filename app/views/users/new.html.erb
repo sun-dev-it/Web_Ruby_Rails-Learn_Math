@@ -1,10 +1,10 @@
 <% provide(:title, "Tạo tài khoản") %>
 
-<div class="row">
+<div class="row container_login">
   <div class="col-3"></div>
   <div class="col-6 row my_container box_shadow">
     <div class="col-6">
-      <center><h4>Tạo tài khoản</h4></center>
+      <center><h4 class="title_login">Tạo tài khoản</h4></center>
       <hr>
       <%= form_with(model: @user, local: true) do |form| %>
         <%= render 'shared/error_messages', object: form.object %>
@@ -47,12 +47,7 @@
     <hr class="vertical">
     
     <div class="col-5">
-      <center> 
-        <h3> Welcome </h3> 
-        <br>
-        <br>
         <%= render 'sessions/welcome' %>
-      </center>
     </div>
   </div>
 

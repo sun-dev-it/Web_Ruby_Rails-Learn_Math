@@ -12,7 +12,8 @@
  *
  *= require_tree .
  *= require_self
-
+ *= require custom
+ 
  filename.scss
 
  filename.coffee
@@ -27,7 +28,7 @@ body {
     background: rgb(214, 214, 214);
     .main_web{
         min-height: 730px;
-        padding-top: 80px;
+        padding-top: 90px;
     }
 }
 
@@ -103,10 +104,6 @@ body {
         }
     }
 }
-.dang_nhap_header{
-    padding-top: 25px;
-}
-
 // snapshot
 .img_snapshot {
     padding-bottom: 4px;
@@ -170,10 +167,9 @@ body {
     display: none;
 }
 
-
 hr.vertical {
     border: none;
-    border-left: 2px solid rgb(204, 204, 204);
+    border-left: 2px solid #f3adad;
     height: 100%;
     margin-top: -2px;
   }

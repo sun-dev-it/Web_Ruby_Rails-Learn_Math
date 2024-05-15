@@ -1,0 +1,28 @@
+<h1>Tạo Flashcard mới</h1>
+
+<%= form_with(model: @flashcard, local: true) do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title%>
+  </div>
+
+  <div>
+    <%= form.label :kanji %>
+    <%= form.text_field :kanji %>
+  </div>
+
+  <div>
+    <%= form.label :hiragana %>
+    <%= form.text_field :hiragana %>
+  </div>
+
+  
+  <div>
+    <%= form.label :meaning %>
+    <%= form.text_field :meaning %>
+  </div>
+  
+  <div>
+    <%= form.submit "Tạo Flashcard" %>
+  </div>
+<% end %>

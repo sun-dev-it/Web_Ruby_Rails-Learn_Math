@@ -1,3 +1,65 @@
+<% if @grouped_flashcards %>
+    <% @grouped_flashcards.each do |title, flashcards| %>
+        <h2><%= title %></h2>
+        <% flashcards.each do |flashcard| %>
+            <div class="row">
+                <div class="col-2">
+                    <%= flashcard.hiragana %>
+                </div>
+
+                <div class="col-3">
+                    <%= flashcard.kanji %>
+                </div>
+
+                <div class="col-3">
+                    <%= flashcard.meaning %>
+                </div>
+
+                <div class="col-1">
+                    <%= link_to 'Xóa flashcrad', flashcard_path(flashcard), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+<% end %>
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
 <ul class="gioi_thieu_n5 gioi_thieu_tieng_nhat">
     <h4><b>Kiến thức cơ bản về ngôn ngữ Nhật</b></h4>
     <li>Tiếng Nhật gồm có 5 cấp độ: N5, N4, N3, N2, N1. Trong đó N1 là cấp độ cao nhất.</li>

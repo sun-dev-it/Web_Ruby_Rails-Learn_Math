@@ -1,0 +1,23 @@
+<div class="flashcard-container container_use_flashcard">
+    <div class="use_flashcard">
+        <% if params[:selected_title].present? %>
+            <% @grouped_flashcards[params[:selected_title]].each_with_index do |flashcard, index| %>
+                <div class="flashcard" data-index="<%= index %>" style="display: <%= index == 0 ? 'block' : 'none' %>">
+                    <div class="font_flashcard_show" id="flashcard_left" onclick = "changediv('flashcard_left', 'flashcard_right')">
+                        <p><%= flashcard.hiragana %></p>
+                    </div>
+
+                    <div class="font_flashcard_hide" id="flashcard_right" onclick = "changediv('flashcard_right', 'flashcard_left')">
+                        <p><%= flashcard.romaji %></p>
+                    </div> 
+                </div>
+            <% end %>
+            <div class="flashcard-controls">
+                <button class="prev-button"><i class="fa-solid fa-arrow-left fa-lg" style="color: #000000;"></i></button>
+                <button class="next-button"><i class="fa-solid fa-arrow-right fa-lg" style="color: #000000;"></i></button>
+            </div>
+        <% else %>
+            <p>Chọn flashcard để học</p>
+        <% end %>
+    </div>
+</div>

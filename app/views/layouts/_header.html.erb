@@ -5,45 +5,70 @@
         </div>
         <div class="col-4">
             <div class="row">
-                <a href="/" class="col-4 color_header">
-                    <i class="fa-solid fa-house fa-xl" style="color: #ffffff;"></i> 
-                    Trang chủ
+                <a href="/" class="col-4 color_header <%= request.path == root_path ? 'active_header' : '' %>">
+                    <i class="fa-solid fa-house fa-xl "></i> 
+                    <span>Trang chủ</span>
                 </a>
-                <a href="/help" class="col-4 color_header">
-                    <i class="fa-solid fa-comments fa-xl" style="color: #ffffff;"></i> 
-                    Hỏi & đáp
+                <a href="/help" class="col-4 color_header <%= request.path == '/help' ? 'active_header' : '' %>">
+                    <i class="fa-solid fa-comments fa-xl"></i> 
+                    <span>Hỏi & đáp</span>
                 </a>
-                <a href="/flashcard" class="col-4 color_header">
-                    <i class="fa-solid fa-book fa-xl" style="color: #ffffff;"></i> 
-                    Flashcard
+                <a href="/flashcards" class="col-4 color_header <%= request.path == '/flashcards' ? 'active_header' : '' %>">
+                    <i class="fa-solid fa-book fa-xl"></i> 
+                    <span>Flashcard</span>
                 </a>
             </div>
         </div>
 
-
         <div class="col-3">
-            <ul>
-                <% if logged_in?  %>
-                    <div class="avatar_web menu">
-                        <i class="fa-solid fa-comment fa-xl" style="color: #ffffff;"></i>
-                        <i class="fa-solid fa-bell fa-xl" style="color: #ffffff;"></i>
-                        <%= link_to current_user do %>
-                            <%= image_tag current_user.avatar, class:"avt_header" if current_user.avatar.attached? %>
-                        <% end %>
-                        <div class="menu_pf hide">
-                            <li> <%= image_tag current_user.avatar, class:"avt_header" if current_user.avatar.attached? %> <%= link_to current_user.name, current_user, class: "color_header"%></li>
-                            <hr>
-                            <li> <i class="fa-solid fa-gears" style="color: #ffffff;"></i> <%= link_to "Chỉnh sửa thông tin", edit_user_path(current_user), class: "color_header" %> </li>
-                            <li> <i class="fa-solid fa-layer-group" style="color: #ffffff;"></i> <%= link_to "Quản lí người dùng", users_path, class: "color_header" %> </li>
-                            <li> <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> <%= link_to "Đăng xuất", logout_path, method: :delete, class: "color_header" %> </li>
-                        </div>
-                    </div>
-                <% else %>
-                    <div class="dang_nhap_header"> <a href="/login" class="color_header"> Đăng nhập </a> </div>
-                <% end %>
-            </ul>
-        </div>
+            <% if logged_in?  %>
+                <div class="menu avatar_web">
+                    <i class="fa-solid fa-comment fa-xl" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-bell fa-xl" style="color: #ffffff;"></i>
+                    <%= link_to current_user do %>
+                        <%= image_tag current_user.avatar, class:"avt_header" if current_user.avatar.attached? %>
+                    <% end %>
 
+                    <div class="menu_pf hide">
+                        <%= link_to current_user do %> 
+                            <div class="menu_color_header">
+                                <%= image_tag current_user.avatar, class:"avt_header_link_pf" if current_user.avatar.attached? %> 
+                                <%= content_tag :span, current_user.name, class: "name_header_link_pf" %>
+                            </div>
+                        <% end %>
+                        <hr>
+
+                        <%= link_to edit_user_path(current_user) do %> 
+                            <div class="menu_color_header">
+                                <i class="fa-solid fa-gears" style="color: #ffffff;"></i> 
+                                Chỉnh sửa thông tin
+                            </div>
+                        <% end %>
+                        <% if current_user.admin? %>
+                            <%= link_to users_path do %> 
+                                <div class="menu_color_header">
+                                    <i class="fa-solid fa-layer-group" style="color: #ffffff;"></i> 
+                                    Quản lí người dùng
+                                </div>
+                            <% end %>                        
+                        <% end %>
+                        <%= link_to logout_path do %> 
+                            <div class="menu_color_header">
+                                <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> 
+                                Đăng xuất
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            <% else %>
+                <div class="color_header_login" > 
+                    <a href="/login" class="color_header <%= request.path == '/login' ? 'active_header' : '' %>"> 
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span> Đăng nhập </span>
+                    </a>
+                </div>
+            <% end %>
+        </div>
         <div class="col-1"></div>
 
     </div>

@@ -1,21 +1,16 @@
 <% provide(:title, "Đăng nhập") %>
 
-<div class="row">
+<div class="row container_login">
   <div class="col-3"></div>
   <div class="col-6 row my_container form_tao-nhap box_shadow">
     <div class="col-5">
-      <center> 
-        <h3> Welcome </h3>
-        <hr>
-        <br>
         <%= render 'sessions/welcome' %>
-      </center>
     </div>
 
     <hr class="vertical">
 
     <div class="col-6">
-      <center><h4>Đăng nhập</h4></center>
+      <center><h4 class="title_login">Đăng nhập</h4></center>
       <hr>
       <%= form_with(url: login_path, scope: :session, local: true) do |form| %>
         <div class="row item_dangnhap">
