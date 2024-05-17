@@ -9,29 +9,25 @@
       <%= form_with(model: @user, local: true) do |form| %>
         <%= render 'shared/error_messages', object: form.object %>
         <div class="row item_tao_user">
-          <div class="col-5">
-            <%= form.label :name, "Tên"%>
+          <div class="inputbox">
+            <%= form.text_field :name, required: true %>
+            <span>Tên</span>
+            <i></i>
           </div>
-          <div class="col-7">
-            <%= form.text_field :name %>
+          <div class="inputbox">
+            <%= form.text_field :email, required: true %>
+            <span>Email</span>
+            <i></i>
           </div>
-          <div class="col-5">
-            <%= form.label :email %>
+          <div class="inputbox">
+            <%= form.text_field :password, required: true %>
+            <span>Mật khẩu</span>
+            <i></i>
           </div>
-          <div class="col-7">
-            <%= form.text_field :email %>
-          </div>
-          <div class="col-5">
-            <%= form.label :password, "Mật khẩu" %>
-          </div>
-          <div class="col-7">
-            <%= form.text_field :password %>
-          </div>
-          <div class="col-5">
-            <%= form.label :password_confirmation, "Nhâp lại mật khẩu" %>
-          </div>
-          <div class="col-7">
-            <%= form.text_field :password_confirmation %>
+          <div class="inputbox">
+            <%= form.text_field :password_confirmation, required: true %>
+            <span>Nhập lại mật khẩu</span>
+            <i></i>
           </div>
           
           <div class="col-7"></div>
@@ -40,7 +36,7 @@
           </div>
         </div>
         <hr class="hr">
-        <div class="nut_taotaikhoan"> <%= link_to "Đăng nhập", login_path %> </div>
+        <div class="nut_taotaikhoan"> <%= link_to "Tạo tài khoản", login_path, class:"change_edit_pf" %> </div>
       <% end %>
     </div>
 

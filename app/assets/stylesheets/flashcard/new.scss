@@ -1,0 +1,52 @@
+.nut_taotaikhoan{
+    text-align: center;
+    a {
+        background: #ffffff;
+        padding: 10px 20px;
+        color: #941212;
+        border: 1px solid #f3adad;
+        border-radius: 6px;
+    }
+
+    a:hover {
+        background: #f3adad;
+    }
+}
+.title_login {
+    color: #941212;
+}
+
+.item_new_flashcard{
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    div input {
+        width: 100%;
+        border: 1px solid #bb2525;
+    }
+    .button_create-edit{
+        margin-top: -2px;
+        width: 100%;
+        background: #bb2525;
+        color: white;
+    }
+    .out_edit-create_flashcard {
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        background: #bb2525;
+        padding: 4px 40px 5px
+    }
+    .out_edit-create_flashcard:hover, .button_create-edit:hover {
+        background: #e94444;
+    }
+    div {
+        margin: 5px 0;
+    }
+    .nut_dangnhap:hover{
+        background: #941212;
+    }
+}
+
+.container_create_flashcard {
+    height: 400px;
+}

@@ -1,0 +1,16 @@
+.list_forum_left {
+    li {
+        a {
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-bottom: 0;
+            color: black;
+            i {
+                color: rgb(31, 31, 31);
+            }
+        }
+        a:hover {
+            background: rgb(202, 202, 202);
+        }
+    }
+}

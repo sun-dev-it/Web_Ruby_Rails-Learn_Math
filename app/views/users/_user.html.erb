@@ -3,7 +3,7 @@
   <div class="col-6"><%= link_to user.name, user %></div>
   <div class="col-6">
     <% if current_user.admin? %>
-    <%= link_to "delete", user, method: :delete, data: { confirm: "chac chan xoa?" } %>
+      <%= link_to "delete", user, method: :delete, data: { confirm: "chac chan xoa?" } %>
     <% end %>
   </div>
   <hr>

@@ -6,17 +6,43 @@
         width: 80%;
         height: 350px;
         text-align: center;
-        padding: 30px;
+        padding: 15px 20px;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         .flashcard {
             height: 280px;
-        }
-        .font_flashcard_show {
-            font-size: 38px;
-        }
-        .font_flashcard_hide {
-            font-size: 30px;
+            li {
+                font-size: 38px;
+            }
+            .menu_flashcard {
+                float: right;
+                .delete_flashcard {
+                    width: 120px;
+                    display: none;
+                    position: absolute;
+                    z-index: 10;
+                    padding: 4px;
+                    border-radius: 4px;
+                    background: white;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                    margin-top: -10px;
+                    a {
+                        float: left;
+                        color: black;
+                    }
+                    a:hover {
+                        color: #a71c1c;
+                        cursor: pointer;
+                    }
+                }
+                ul{
+                    padding: 2px;
+                    border-radius: 30%;
+                }
+                ul:hover {
+                    background: rgb(212, 212, 212);
+                }
+            }
         }
     }
 }
@@ -34,4 +60,17 @@
         border: none;
         float: right;
     }
+    .prev-button:hover, .next-button:hover {
+        color: #8b1010;
+    }
+}
+
+#flashcard_menu_pf {
+    padding: 0 14px;
+    display: none;
+}
+
+.mui_ten_flashcard_pf {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
 }

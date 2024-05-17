@@ -1,40 +1,26 @@
 <% provide(:title, "Hoi-dap") %>
 
-
+<% if logged_in? %>
 <div class="row">
     <div class="col-3"></div>
+
     <div class="col-3 fix_div_forum">
-        <div class="my_container">
-            <i class="fa-solid fa-magnifying-glass"></i> Thanh tìm kiếm
-            <hr>
-            <ul class="list_forum">
-                <li><b><a href="#" >Flashcard</a></b></li>
-                <% if @grouped_flashcards.present? %>
-                    <% @grouped_flashcards.each do |title, flashcards| %>
-                        <li> <%= link_to title, flashcards_path(current_flashcard_index: 0, selected_title: title) %></li>
-                    <% end %>
-                <% end %>
-            </ul>
-        </div>
+        <%= render 'flashcards/list_flashcard' %>
     </div>
 
     <div class="col-1"></div>
 
     <div class="col-4">
-        <div class="my_container">
-            <%= render 'flashcards/flashcard' %>
-        </div>
+        <%= render 'flashcards/flashcard' %>
     </div>
 
-
     <div class="col-3">
-        <ul class="my_container">
-            <i class="fa-solid fa-bookmark" style="color: #2e2e2e;"></i> 
-            <b> Đã lưu </b>
-            <p><a href="/flashcards/new">Thêm flashcard</a></p>
-        </ul>
+        <%= render 'flashcards/list_menu_right' %>
     </div>
 
     <div class="col-1"></div>
 </div>
 
+<% else %>
+    <%= render 'shared/not_logged' %>
+<% end %>

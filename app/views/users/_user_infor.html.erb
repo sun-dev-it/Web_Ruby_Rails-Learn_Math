@@ -9,9 +9,8 @@
             <%= render 'users/avatar' %>
         <% end %>
         <%= link_to @user.name, user_path(@user), class:"color_normal"  %>
-
-        <%= render 'shared/follow_form' if logged_in? %>
-        <%= render 'shared/stats' %>
+        <%= render 'users/follow/follow_form' if logged_in? %>
+        <%= render 'users/follow/stats' %>
     </div>
     
     <div class="detail">
@@ -22,7 +21,7 @@
             <i class="fa-solid fa-user-group" style="color: #454545;"></i> 
             <b>Bạn bè</b> 
             <% if @friends.any? %>
-                <%= render "users/friend" %>
+                <%= render "users/follow/friend" %>
             <% else %>
                 <p>Bạn chưa có bạn bè.</p>
             <% end %>

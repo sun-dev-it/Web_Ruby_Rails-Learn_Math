@@ -1,23 +1,33 @@
-<div class="flashcard-container container_use_flashcard">
-    <div class="use_flashcard">
-        <% if params[:selected_title].present? %>
-            <% @grouped_flashcards[params[:selected_title]].each_with_index do |flashcard, index| %>
-                <div class="flashcard" data-index="<%= index %>" style="display: <%= index == 0 ? 'block' : 'none' %>">
-                    <div class="font_flashcard_show" id="flashcard_left" onclick = "changediv('flashcard_left', 'flashcard_right')">
-                        <p><%= flashcard.hiragana %></p>
-                    </div>
+<div class="my_container">
+    <div class="flashcard-container container_use_flashcard">
+        <div class="use_flashcard">
+            <% if params[:selected_title].present? %>
+                <% @grouped_flashcards[params[:selected_title]].each_with_index do |flashcard, index| %>
+                    <div class="flashcard" data-index="<%= index %>" style="display: <%= index == 0 ? 'block' : 'none' %>">
+                        <div class="menu_flashcard" onclick="show_div_click('delete_flashcard')">
+                            <ul><i class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #000000;"></i></ul>
+                            <div class="delete_flashcard">
+                                <%= link_to 'Chỉnh sửa', edit_flashcard_path(flashcard) %>
+                                <%= link_to 'Xóa flashcrad', flashcard_path(flashcard), method: :delete, data: { confirm: 'Are you sure?' } %>
+                                <a>Thoát</a>
+                            </div>
+                        </div>
+                        <br><br>
+                            <li id="flashcard_hiragana"><%= flashcard.hiragana %></li>
+                            <li id="flashcard_romaji"><%= flashcard.romaji %></li>
+                            <li id="flashcard_kanji"><%= flashcard.kanji %></li>
+                            <li id="flashcard_meaning"><%= flashcard.meaning %></li>
 
-                    <div class="font_flashcard_hide" id="flashcard_right" onclick = "changediv('flashcard_right', 'flashcard_left')">
-                        <p><%= flashcard.romaji %></p>
-                    </div> 
+                    </div>
+                <% end %>
+                <div class="flashcard-controls">
+                    <button class="prev-button"><i class="fa-solid fa-arrow-left fa-lg"></i></button>
+                    <button class="next-button"><i class="fa-solid fa-arrow-right fa-lg"></i></button>
                 </div>
+            <% else %>
+                <br><br><br><br><br>
+                <h4>Chọn flashcard để học</h4>
             <% end %>
-            <div class="flashcard-controls">
-                <button class="prev-button"><i class="fa-solid fa-arrow-left fa-lg" style="color: #000000;"></i></button>
-                <button class="next-button"><i class="fa-solid fa-arrow-right fa-lg" style="color: #000000;"></i></button>
-            </div>
-        <% else %>
-            <p>Chọn flashcard để học</p>
-        <% end %>
+        </div>
     </div>
 </div>

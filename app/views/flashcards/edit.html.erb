@@ -1,4 +1,4 @@
-<% provide(:title, "Tạo Flashcard") %>
+<% provide(:title, "Chỉnh sửa Flashcard") %>
 <% if logged_in? %>
   <div class="row">
       <div class="col-3"></div>
@@ -13,7 +13,7 @@
         <div class="row my_container container_create_flashcard box_shadow">
           <div class="col-2"></div>
           <div class="col-8">
-            <center><h4 class="title_login">Tạo Flashcard</h4></center>
+            <center><h4 class="title_login">Chỉnh sửa flashcard</h4></center>
             <%= form_with(model: @flashcard, local: true) do |form| %>
               <div class="row item_new_flashcard">
                 <div class="col-4">

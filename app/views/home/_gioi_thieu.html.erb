@@ -1,73 +1,11 @@
-<% if @grouped_flashcards %>
-    <% @grouped_flashcards.each do |title, flashcards| %>
-        <h2><%= title %></h2>
-        <% flashcards.each do |flashcard| %>
-            <div class="row">
-                <div class="col-2">
-                    <%= flashcard.hiragana %>
-                </div>
-
-                <div class="col-3">
-                    <%= flashcard.kanji %>
-                </div>
-
-                <div class="col-3">
-                    <%= flashcard.meaning %>
-                </div>
-
-                <div class="col-1">
-                    <%= link_to 'Xóa flashcrad', flashcard_path(flashcard), method: :delete, data: { confirm: 'Are you sure?' } %>
-                </div>
-            </div>
-        <% end %>
-    <% end %>
-<% end %>
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-
 <ul class="gioi_thieu_n5 gioi_thieu_tieng_nhat">
-    <h4><b>Kiến thức cơ bản về ngôn ngữ Nhật</b></h4>
+    <h4 id="kien_thuc_co_ban"><b>Kiến thức cơ bản về ngôn ngữ Nhật</b></h4>
     <li>Tiếng Nhật gồm có 5 cấp độ: N5, N4, N3, N2, N1. Trong đó N1 là cấp độ cao nhất.</li>
     <li>Có các kì thi năng lực tiếng Nhật như: JLPT, NAS-TEST, TOP J.</li>
 
     <hr>
-    <h4><b>Kiến thức cơ bản về việc bắt đầu học tiếng Nhật</b></h4>
-    <li>Tiếng Nhật có 2 bảng chữ cái là: Hiragana và Katakana, để bắt đầu họ tiếng Nhật cần học 2 bảng chữ cái này.</li>
+    <h4 id="bat_dau_hoc"><b>Kiến thức cơ bản về việc bắt đầu học tiếng Nhật</b></h4>
+    <li>Tiếng Nhật có ba hệ thống chữ viết chính: Hiragana, Katakana và Kanji. Hiragana và Katakana là 2 bảng chữ cái tiếng Nhật, mỗi bộ có 46 ký tự, để bắt đầu họ tiếng Nhật cần học 2 bảng chữ cái này. Kanji là các chữ Hán được mượn từ Trung Quốc và được sử dụng rộng rãi trong tiếng Nhật.</li>
     <b>Hiragana</b>
     <li>Sử dụng thương ngày, dùng để đánh vần chữ Kanji, dùng trong ngữ pháp.</li>
     <b>Katakana</b>
@@ -75,4 +13,12 @@
     <b>Kanji</b>
     <li>Kanji là một hình thức chữ viết trong tiếng Nhật được mượn từ chữ Hán.</li>
     <li>Hầu hết các văn bản tiếng Nhật, bao gồm sách, báo chí, tài liệu học tập và kỹ thuật, đều sử dụng Kanji.</li>
+    <h4 id="gioi_thieu_trang_web"><b>Giới thiệu về trang web này</b></h4>
+    <li>Trang web được viết dựa trên sách "Minna no Nihongo" là một nguồn tài nguyên rất hữu ích cho những ai đang học tiếng Nhật. Dưới đây là một bài giới thiệu về trang web này:
+
+    "Minna no Nihongo" là một loạt sách giáo trình tiếng Nhật được sử dụng rộng rãi trên toàn thế giới. Sách được biên soạn với mục tiêu giúp người học tiếng Nhật như một ngoại ngữ có thể nhanh chóng tiếp cận và sử dụng được ngôn ngữ này trong cuộc sống hàng ngày.</li>
+    <h4 id="loi_nhan"><b>Lời nhắn của admin</b></h4>
+    <li>Học tiếng Nhật là một quá trình khá khó khăn, đặc biệt là việc học Kanji. Tuy nhiên, với sự kiên trì và nỗ lực, người học có thể dần dần nắm bắt được ngôn ngữ này và khám phá nền văn hóa Nhật Bản phong phú.</li>
+    <h4><b>Lời kết</b></h4>
+    <li>Tiếng Nhật không chỉ là công cụ giao tiếp, mà còn là cửa sổ mở ra thế giới của văn hóa Nhật Bản - một nền văn hóa độc đáo và đáng khám phá.</li>
 </ul>

@@ -1,50 +1,14 @@
 <div class="row">
-    <div class="col-1"></div>
-    <div class="col-2">
+    <div class="col-4"></div>
+    <div class="col-3 fix_div_forum">
         <div class="my_container">
-            <i class="fa-solid fa-magnifying-glass"></i>Thanh tìm kiếm
-            <hr>
-            <li onclick="toggleDiv('list0', '.mui_ten_home0')" class="hover_list_home">
-                <i class="fa-solid fa-chevron-up mui_ten_home0" style="color: #0d0d0d;"></i>
-                Trước khi học tiếng Nhất
-            </li>
-            <ul id="list0">
-                <li>a</li>
-                <li>b</li>         
-            </ul>
-
-        
-            <li onclick="toggleDiv('list1', '.mui_ten_home1')" class="hover_list_home">
-                <i class="fa-solid fa-chevron-up mui_ten_home1" style="color: #0d0d0d;"></i>
-                N5 (Mina no nihongo)
-            </li>
-            <ul id="list1">
-                <li class="bg_list1" onclick = "listn5('listn5_0')">Bảng chữ cái</a></li>
-                <li class="bg_list2" onclick = "listn5('listn5_1')">Bài 01</li>
-                <li class="bg_list1" onclick = "listn5('listn5_2')">Bài 02</li>
-                <li class="bg_list2" onclick = "listn5('listn5_3')">Bài 03</li>
-                <li class="bg_list1" onclick = "listn5('listn5_4')">Bài 04</li>
-                <li class="bg_list2" onclick = "listn5('listn5_5')">Bài 05</li>
-                <li class="bg_list1" onclick = "listn5('listn5_6')">Bài 06</li>
-                <li class="bg_list2" onclick = "listn5('listn5_7')">Bài 07</li>
-                <li class="bg_list1" onclick = "listn5('listn5_8')">Bài 08</li>
-                <li class="bg_list2" onclick = "listn5('listn5_9')">Bài 09</li>
-                <li class="bg_list1" onclick = "listn5('listn5_10')">Bài 10</li>                
-            </ul>
-            <li onclick="toggleDiv('list2', '.mui_ten_home2')" class="hover_list_home">
-                <i class="fa-solid fa-chevron-up mui_ten_home2" style="color: #0d0d0d;"></i>
-                N4 (Mina no nihongo)
-                <ul id="list2">
-                    Đang làm
-                </ul>
-            </li>
+            <%= render 'home/list_home' %>
         </div>
     </div>
 
-    <div class="col-7">
+    <div class="col-6">
         <div class="my_container">
             <%= render 'home/gioi_thieu' %>
-            <%= render 'home/list_content' %>
         </div>
     </div>
 

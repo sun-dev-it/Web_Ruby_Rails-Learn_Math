@@ -15,12 +15,12 @@
 
                 <div class="col-2 menu"> 
                     <i class="fa-solid fa-ellipsis" style="color: #000000;"></i>
-                    <div class="hide delete_snapshot_pf box_shadow">
+                    <ul class="hide delete_snapshot_pf box_shadow">
                         <% if current_user?(snapshot.user) or current_user.admin? %>
-                            <%= button_to " Xóa", snapshot, method: :delete, class:"fa-solid fa-trash", style:"color: #000000; background: none;" %>
-                            <li> Sao chép liên kết </li>
+                            <li><i class="fa-solid fa-trash"></i> <%= link_to " Xóa", snapshot, method: :delete, style:"color: #000000; background: none;" %><li>
+                            <li><i class="fa-solid fa-copy fa-lg"></i> Sao chép liên kết</li>
                         <% end %>
-                    </div>
+                    </ul>
                 </div>
 
                 <div class="col-12">
@@ -47,4 +47,5 @@
         </div>
     </div>
 </div>
+
 <br>

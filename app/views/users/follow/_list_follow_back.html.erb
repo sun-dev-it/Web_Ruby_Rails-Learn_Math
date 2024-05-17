@@ -1,0 +1,25 @@
+<div class="list_follow_back">
+    <div class="my_container padding_list_follow_back">
+        <p> Đang theo dõi bạn </p>
+        <div class="row">
+            <% @users_followers.each do |users_follower| %>
+                <% if current_user != users_follower %>
+                    <div class="col-2 list_follow"> <%= image_tag users_follower.avatar %> </div>
+                    <div class="col-3"> <%= link_to users_follower.name, user_path(users_follower) %> </div>
+                    <div class="col-2"></div>
+                    <div class="col-5">
+                        <div id="follow_form">
+                                <% unless current_user.following?(@users_follower) %>
+                                    <%= render 'users/follow/follow_back' %>
+                                <% end %>
+                        </div> 
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+        <hr>
+        <p>Chat gần đây</p>
+        <hr>
+        <p>Nhóm chat gần đây</p>
+    </div>
+</div>

@@ -3,7 +3,6 @@
     <div class="col-4">
       <%= render 'users/user_infor' %>
     </div>
-    <div class="col-1"></div>
     <div class="col-4">
         <% if @users.any? %>
             <div class="users fol1ow my_container">
@@ -24,6 +23,11 @@
                     <% end %>
                 </div>
             </div>
+        <% else %>
+            <div class="users fol1ow my_container">
+                Bạn chưa có <%= @title %> nào
+            </div>
         <% end %>
     </div>
+    <div class="col-4"></div>
 </div>

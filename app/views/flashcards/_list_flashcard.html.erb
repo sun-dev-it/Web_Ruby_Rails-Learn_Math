@@ -1,0 +1,15 @@
+<div class="my_container">
+    <%= render 'shared/search' %>
+    <hr>
+    <ul class="list_flashcards">
+        <li><center><h5><b><a href="/flashcards" >Flashcard</a></b></h5></center></li>
+        <% if @grouped_flashcards.present? %>
+            <% @grouped_flashcards.each do |title, flashcards| %>
+                <li> 
+                    <i class="fa-solid fa-caret-right fa-xs" style="color: #000000;"></i>
+                    <%= link_to title, flashcards_path(current_flashcard_index: 0, selected_title: title) %>
+                </li>
+            <% end %>
+        <% end %>
+    </ul>
+</div>

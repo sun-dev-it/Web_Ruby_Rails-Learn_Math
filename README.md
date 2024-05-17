@@ -5,8 +5,8 @@
    
 # Các chức năng tổng quát:
    1. User: CRUD (Create, Read, Update, Delete), follow/unfollow, friends
-   2. Posts: Create, Delete
-   3. Flashcard: Create, Delete
+   2. Posts: create, delete
+   3. Flashcard: create, update, delete
 
 # Demo chi tiết
 ## User

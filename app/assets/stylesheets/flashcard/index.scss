@@ -1,0 +1,21 @@
+.list_flashcards {
+    a {
+        color:black
+    }
+    a:hover {
+        color: #a71c1c
+    }
+}
+
+.menu_right_flashcard{
+    li {
+        margin: 4px;
+        a {
+            color: black;
+            cursor: pointer;
+        }
+        a:hover, i:hover {
+            color: #a71c1c
+        }
+    }
+}

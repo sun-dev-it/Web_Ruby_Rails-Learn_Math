@@ -6,15 +6,21 @@
     <%= render 'users/user_infor' %>
   </div>
 
-  
-  <div class="col-1">
+  <div class="col-1 back_pf">
+    <% if @user.id != current_user.id %>
+      <%= link_to user_path(current_user) do %>
+        <div class="back_pf">
+          <i class="fa-solid fa-arrow-left fa-xl"></i>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="col-4">
     <div class="my_container">
       <%= render 'snapshots/snapshot_form' %>
-    </div>
-    <br>
+    </div><br>
+    
     <div>
       <% if @user.snapshots.any? %>
         <%= render @snapshots %>
@@ -36,7 +42,6 @@
         </center>
       </h5>
       <hr>
-
       <%= render 'snapshots/user_save/snapshots' %>
       <%= render 'flashcards/user_save/flashcard' %>
     </div>

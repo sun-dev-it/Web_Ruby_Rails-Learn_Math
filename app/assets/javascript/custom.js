@@ -8,6 +8,15 @@ function hideDiv() {
   div.style.display = "none";
 }
 
+
+function show_div_click(item) {
+  var div = document.querySelector('.' + item);
+  if (div.style.display == "none")
+    div.style.display = "block";
+  else
+    div.style.display = "none";
+}
+
 function listn5(i) {
   var elements = document.querySelector(".gioi_thieu_n5");
     elements.style.display = "none";
@@ -35,14 +44,9 @@ function toggleDiv(item, mui_ten) {
 }
 
 
-function changediv(item1, item2) {
-  var item_1 = document.getElementById(item1);
-  var item_2 = document.getElementById(item2);
-  console.log(item1, item2);
-  item_1.style.display = "none";
-  item_2.style.display = "block";
+function toggleFlashcardDetails(element) {
+  $(element).find('p').toggle(); // Toggle visibility of all <p> elements within the flashcard-details div
 }
-
 
 
 document.addEventListener('DOMContentLoaded', function() {

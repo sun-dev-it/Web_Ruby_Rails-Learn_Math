@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get '/help', to: 'forum#index'
-  get '/flashcards', to: 'flashcards#index'
+  get '/help', to: 'forum#index', name: "forum"
+  get '/flashcards', to: 'flashcards#index', name: "flashcards"
 
   get '/users', to: 'users#index'
   get '/signup', to: 'users#new'
@@ -20,6 +20,6 @@ Rails.application.routes.draw do
 
   resources :snapshots, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
-  resources :flashcards, only: [:index, :show, :new, :create, :destroy]
+  resources :flashcards, only: [:index, :show, :new, :create, :destroy, :edit, :update]
 end
 
