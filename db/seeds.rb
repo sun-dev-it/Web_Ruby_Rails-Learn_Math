@@ -1,4 +1,4 @@
-=begin
+#=begin
 Snapshot.delete_all
 User.delete_all
 
@@ -44,8 +44,8 @@ users.each do |user|
     user.follow(admin)
 end
 
-=end
+#=end
 
 
 #N5
-Flashcard.delete_all
+#Flashcard.delete_all

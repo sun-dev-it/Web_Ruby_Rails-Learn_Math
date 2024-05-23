@@ -1,15 +1,21 @@
-.post_snapshot {
-    width: 100%;
-    background: #ffffff;
-    color: #000000;
-    padding: 2px;
-    border: 1px solid #aa1d1d;
-    border-radius: 8px;
+.fix_btn_post_snapshot{
+    .post_snapshot {
+        width: 100%;
+        background: #fff0f0;
+        color: #aa1d1d;
+        padding: 2px;
+        border: 1px solid #aa1d1d;
+        border-radius: 8px;
+    }
+    .fix_btn_comment {
+        margin-top: 5px;
+    }
 }
 
+
 .post_snapshot:hover {
-    color: #ffd8d8;
-    background: #aa1d1d;
+    color: #ffffff;
+    background: #e43e3e;
 }
 
 .choose_file_snapshot{

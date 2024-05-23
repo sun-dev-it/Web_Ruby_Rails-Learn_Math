@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   end
 
   get '/flashcards/new', to: 'flashcards#new'
-
+  resources :snapshots do
+    resources :comments, only: [:create, :update, :destroy, :edit]
+  end
   resources :snapshots, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :flashcards, only: [:index, :show, :new, :create, :destroy, :edit, :update]

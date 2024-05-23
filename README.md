@@ -5,7 +5,7 @@
    
 # Các chức năng tổng quát:
    1. User: CRUD (Create, Read, Update, Delete), follow/unfollow, friends
-   2. Posts: create, delete
+   2. Posts: create, delete, Comment (create, delete)
    3. Flashcard: create, update, delete
 
 # Demo chi tiết
@@ -25,5 +25,5 @@
 # Các trang của web
    1. Home: có thể học từ vựng ngữ pháp thông qua sách Mina no Nihongo
    2. Hỏi & đáp: đăng các bài post chia sẻ kiến thức hoặc nhờ sự giúp đỡ từ cộng đồng
-   3. Flashcard: học từ vừng thông qua flashcard có 2 mặt
+   3. Flashcard: học từ vừng thông qua flashcard
    4. Profile: thông tin người dùng và các bài post

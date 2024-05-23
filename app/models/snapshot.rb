@@ -1,4 +1,5 @@
 class Snapshot < ApplicationRecord
+  has_many :comments
   belongs_to :user
   has_one_attached :image
   default_scope -> { order(created_at: :desc) }
