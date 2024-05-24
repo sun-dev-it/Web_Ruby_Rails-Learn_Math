@@ -20,12 +20,12 @@
             <i></i>
           </div>
           <div class="inputbox">
-            <%= form.text_field :password, required: true %>
+            <%= form.password_field :password, required: true %>
             <span>Mật khẩu</span>
             <i></i>
           </div>
           <div class="inputbox">
-            <%= form.text_field :password_confirmation, required: true %>
+            <%= form.password_field :password_confirmation, required: true %>
             <span>Nhập lại mật khẩu</span>
             <i></i>
           </div>
@@ -36,7 +36,7 @@
           </div>
         </div>
         <hr class="hr">
-        <div class="nut_taotaikhoan"> <%= link_to "Tạo tài khoản", login_path, class:"change_edit_pf" %> </div>
+        <div class="nut_taotaikhoan"> <%= link_to "Đăng nhập", login_path, class:"change_edit_pf" %> </div>
       <% end %>
     </div>
 

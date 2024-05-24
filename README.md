@@ -10,8 +10,8 @@
 
 # Demo chi tiết
 ## User
-### 1. Sign up/ sign in/ sign out
-### 2. Edit user/ change avatar user
+### 1. Sign up/ sign in/ sign out/ edit user/ change avatar user
+### ![](./app/assets/video/user.webm)
 ### 3. Follow/ unfollow/ friends: cả hai follow nhau sẽ thành bạn bè
 ### 4. Post: có thể đính kèm hình ảnh
 
