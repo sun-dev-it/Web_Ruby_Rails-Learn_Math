@@ -84,7 +84,7 @@
     <div class="row">
         <div class="col-2">
             <div class="avatar_wrapper">
-                <%= image_tag @user.avatar if @user.avatar.attached? %>
+                <%= image_tag current_user.avatar if current_user.avatar.attached? %>
             </div>
         </div>
         <div class="col-10">

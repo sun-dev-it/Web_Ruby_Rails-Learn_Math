@@ -1,4 +1,4 @@
-USE `Web_Ruby_Rails-Learn_janpanese`;
+USE 'Web_Ruby_Rails-Learn_janpanese';
 INSERT INTO flashcards (title, hiragana, romaji, kanji, meaning, created_at, updated_at)
 VALUES
 ('Hiragana', 'あ', 'a', '', '', NOW(), NOW()),
@@ -92,4 +92,8 @@ VALUES
 ('Katakana', 'ロ', 'ro', '', '', NOW(), NOW()),
 ('Katakana', 'ワ', 'wa', '', '', NOW(), NOW()),
 ('Katakana', 'ヲ', 'wo', '', '', NOW(), NOW()),
-('Katakana', 'ン', 'n', '', '', NOW(), NOW());
+('Katakana', 'ン', 'n', '', '', NOW(), NOW()),
+('Từ vựng N5', 'ヲ', 'wo', '', '', NOW(), NOW()),
+('Kanji N5', 'ヲ', 'wo', '', '', NOW(), NOW()),
+('Từ vựng N4', 'ヲ', 'wo', '', '', NOW(), NOW()),
+('Kanji N4', 'ヲ', 'wo', '', '', NOW(), NOW());

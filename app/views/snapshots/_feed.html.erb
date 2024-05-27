@@ -17,11 +17,12 @@
 
                         <div class="col-2 menu"> 
                             <i class="fa-solid fa-ellipsis" style="color: #000000;"></i>
-                            <div class="hide">
+                            <ul class="hide delete_snapshot_pf box_shadow">
                                 <% if current_user.admin? %>
-                                    <%= button_to " Xóa", item, method: :delete, data: { confirm: "xoa" }, class:"fa-solid fa-trash", style:"color: #000000; background: none;" %>
+                                    <li><i class="fa-solid fa-trash"></i> <%= link_to " Xóa", item, method: :delete, style:"color: #000000; background: none;" %><li>
+                                    <li><i class="fa-solid fa-copy fa-lg"></i> Sao chép liên kết</li>
                                 <% end %>
-                            </div>
+                            </ul>
                         </div>
 
                         <div class="col-12">
@@ -52,7 +53,7 @@
                 </div>
             </div>
 
-            <hr>
+            <hr> 
 
             <div class="row container_comment">
                 <span class="col-12 text_cmt">Bình luận</span>
@@ -86,7 +87,7 @@
             <div class="row">
                 <div class="col-2">
                     <div class="avatar_wrapper">
-                        <%= image_tag @user.avatar if @user.avatar.attached? %>
+                        <%= image_tag current_user.avatar if current_user.avatar.attached? %>
                     </div>
                 </div>
                 <div class="col-10">

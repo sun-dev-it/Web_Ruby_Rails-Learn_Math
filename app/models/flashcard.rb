@@ -1,6 +1,5 @@
 class Flashcard < ApplicationRecord
     validates :title, presence: true
-    validates :romaji, presence: true
     before_save :set_default_flashcard
     def set_default_flashcard
         self.hiragana = "" if self.hiragana.nil?
