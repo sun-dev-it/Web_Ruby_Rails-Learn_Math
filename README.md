@@ -9,7 +9,8 @@
    3. Flashcard: create, update, delete
 
 # Video demo
-   [Bấm vào đây để xem video](https://youtu.be/VrKKdSCBC0s)
+[![Xem video trên YouTube](https://img.youtube.com/vi/VrKKdSCBC0s/0.jpg)](https://youtu.be/VrKKdSCBC0s)
+
 # # The pages of the website
    1. Home: learn grammars, and vocabularies through the book Mina no Nihongo
    2. Q&A: post your knowledge, and ask for help from the community
